@@ -66,7 +66,7 @@ To run the Airline Reservation System on your local machine, follow these steps:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/ImaginecoreX/SerendicARS```
+   git clone https://github.com/ImaginecoreX/SerendicARS
 
 ## Project Structure
 ```
