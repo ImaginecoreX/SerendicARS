@@ -66,4 +66,33 @@ To run the Airline Reservation System on your local machine, follow these steps:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/airline-reservation-system.git
+   git clone https://github.com/ImaginecoreX/SerendicARS```
+
+## Project Structure
+```
+SerendicARS/
+├── build.xml
+├── src/
+│   └── com/
+│   └── icx/
+│   |   └── ars/
+|   |   |   ├── dashboard/
+│   │   │   ├── user/
+│   │   │   ├── passenger/
+│   │   │   ├── schedule/
+│   │   │   ├── ticket/
+│   │   │   ├── flight/
+│   │   │   ├── clazz/  # "class" is a reserved word in Java
+│   │   │   ├── seat/
+│   │   │   ├── notification/
+│   │   │   ├── calendar/
+│   │   │   └── logout/
+├── lib/
+│   └── (external libraries)
+├── build/
+│   ├── classes/
+│   └── lib/
+└── README.md
+
+```
+   
