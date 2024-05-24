@@ -6,6 +6,13 @@ package icx.application.main.sub.gui;
 
 import java.awt.BorderLayout;
 import javax.swing.SwingUtilities;
+import com.formdev.flatlaf.extras.FlatSVGIcon;
+import java.util.HashMap;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRTableModelDataSource;
+import net.sf.jasperreports.view.JasperViewer;
+import icx.util.Report;
 
 /**
  *
@@ -18,11 +25,12 @@ public class UserLogs extends javax.swing.JDialog {
     /**
      * Creates new form UserLogs
      */
-    public UserLogs(javax.swing.JPanel userManagement,String userId) {
+    public UserLogs(javax.swing.JPanel userManagement, String userId) {
         initComponents();
-        System.out.println("icx.application.main.sub.gui.UserLogs.<init>()....."+userId+"");
         this.userManagement = (UserManagement) userManagement;
         this.userManagement.getUserServiceIMPL().loadUserLogs(jTable1, userId);
+        this.userManagement.getUserLogsBtn().setEnabled(false);
+        jButton3.setIcon(new FlatSVGIcon("icx/icon/svg/close.svg"));
     }
 
     /**
@@ -42,11 +50,11 @@ public class UserLogs extends javax.swing.JDialog {
         jPanel6 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -60,17 +68,18 @@ public class UserLogs extends javax.swing.JDialog {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "#", "Login", "Logout", "First Name", "Last Name", "Email", "Mobile", "Role"
+                "#", "Login", "Logout"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -102,52 +111,61 @@ public class UserLogs extends javax.swing.JDialog {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 46, Short.MAX_VALUE)
+            .addGap(0, 62, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel6);
 
         jPanel4.setLayout(new java.awt.GridLayout(1, 0));
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 87, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 46, Short.MAX_VALUE)
-        );
+        jPanel9.setLayout(new java.awt.BorderLayout());
+
+        jButton1.setText("PRINT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton1, java.awt.BorderLayout.CENTER);
 
         jPanel4.add(jPanel9);
 
-        jPanel8.setLayout(new java.awt.BorderLayout());
-
-        jButton1.setText("PRINT");
-        jPanel8.add(jButton1, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 87, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 62, Short.MAX_VALUE)
+        );
 
         jPanel4.add(jPanel8);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 87, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 46, Short.MAX_VALUE)
-        );
+        jPanel7.setLayout(new java.awt.BorderLayout());
+
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton3, java.awt.BorderLayout.CENTER);
 
         jPanel4.add(jPanel7);
 
         jPanel2.add(jPanel4);
 
-        jPanel3.setLayout(new java.awt.BorderLayout());
-
-        jButton2.setText("EXIT");
-        jPanel3.add(jButton2, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 261, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 62, Short.MAX_VALUE)
+        );
 
         jPanel2.add(jPanel3);
 
@@ -169,6 +187,29 @@ public class UserLogs extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("fname", "");
+        map.put("lname", "");
+        map.put("mobile", "");
+        map.put("email", "");
+        map.put("role", "");
+
+        String reportPath = "src//icx//resources//serendic_ars_user.jasper";
+
+        new Report().print(jTable1, reportPath, map);
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.userManagement.getUserLogsBtn().setEnabled(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,7 +256,7 @@ public class UserLogs extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
