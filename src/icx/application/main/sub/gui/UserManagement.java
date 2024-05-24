@@ -7,6 +7,9 @@ package icx.application.main.sub.gui;
 import java.util.HashMap;
 import icx.service.impl.UserServiceIMPL;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import icx.util.Validation;
+import com.formdev.flatlaf.extras.FlatSVGIcon;
 
 /**
  *
@@ -32,16 +35,28 @@ public class UserManagement extends javax.swing.JPanel {
         jButton4.setEnabled(false);
         jButton2.setEnabled(false);
         jComboBox2.setEnabled(false);
+        jButton5.setText("");
+        jButton5.setIcon(new FlatSVGIcon("icx/icon/svg/refresh.svg", 0.5f));
     }
 
     public UserServiceIMPL getUserServiceIMPL() {
         return this.userServiceIMPL;
     }
-    
-    public JButton getUserRoleBtn(){
-    
+
+    public JButton getUserRoleBtn() {
+
         return jButton1;
-   
+
+    }
+
+    public JButton getUserLogsBtn() {
+
+        return jButton2;
+    }
+
+    public void loadUserTypes() {
+
+        this.userTypesId = userServiceIMPL.loadUserTypes(jComboBox1);
     }
 
     /**
@@ -63,6 +78,7 @@ public class UserManagement extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -125,7 +141,7 @@ public class UserManagement extends javax.swing.JPanel {
 
         jPanel5.add(jPanel7);
 
-        jPanel9.setLayout(new java.awt.BorderLayout());
+        jPanel9.setLayout(new java.awt.GridLayout(1, 0, 5, 5));
 
         jButton5.setText("Back");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +149,15 @@ public class UserManagement extends javax.swing.JPanel {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton5, java.awt.BorderLayout.CENTER);
+        jPanel9.add(jButton5);
+
+        jButton6.setText("Back");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton6);
 
         jPanel5.add(jPanel9);
 
@@ -240,6 +264,12 @@ public class UserManagement extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("SF Pro Display", 0, 14)); // NOI18N
         jLabel7.setText("Password");
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setEditable(true);
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Status", "Block", "Active" }));
@@ -351,9 +381,9 @@ public class UserManagement extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         int selectRow = jTable1.getSelectedRow();
-       if(selectRow != -1){
-        new UserLogs(this,String.valueOf(jTable1.getValueAt(selectRow, 0))).setVisible(true);
-       }
+        if (selectRow != -1) {
+            new UserLogs(this, String.valueOf(jTable1.getValueAt(selectRow, 0))).setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -418,22 +448,25 @@ public class UserManagement extends javax.swing.JPanel {
         String password = String.valueOf(jPasswordField1.getPassword());
         String type = String.valueOf(jComboBox1.getSelectedItem());
         if (fname.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter first name", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (lname.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter last name", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (mobile.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter mobile", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (Validation.mobile(mobile)) {
+            JOptionPane.showMessageDialog(this, "invalid mobile", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (email.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter email", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (Validation.email(email)) {
+            JOptionPane.showMessageDialog(this, "invalid email", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (password.isEmpty()) {
-
-        } else if (password.length() <= 5 && password.length() >= 10) {
-            System.out.println("gui.UserManagement.jButton3ActionPerformed()");
+            JOptionPane.showMessageDialog(this, "Please enter password", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (Validation.password(password)) {
+            JOptionPane.showMessageDialog(this, "invalid password", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (type.equals("Select Type")) {
-
+            JOptionPane.showMessageDialog(this, "select user role", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            System.out.println(userTypesId.get(type));
-            System.out.println(password);
+
             userServiceIMPL.userAdd(mobile, fname, lname, password, email, userTypesId.get(type));
             userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` ORDER BY `u_id` ASC");
 
@@ -454,17 +487,21 @@ public class UserManagement extends javax.swing.JPanel {
         }
         int selectrow = jTable1.getSelectedRow();
         if (fname.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter first name", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (lname.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter last name", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (mobile.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter mobile", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (Validation.mobile(mobile)) {
+            JOptionPane.showMessageDialog(this, "invalid mobile", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (email.isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Please enter email", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (Validation.email(email)) {
+            JOptionPane.showMessageDialog(this, "invalid email", "Warning", JOptionPane.WARNING_MESSAGE);
         } else if (password.isEmpty()) {
-
-        } else if (password.length() <= 5 && password.length() >= 10) {
-            System.out.println("gui.UserManagement.jButton3ActionPerformed()");
+            JOptionPane.showMessageDialog(this, "Please enter password", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else if (Validation.password(password)) {
+            JOptionPane.showMessageDialog(this, "invalid password", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
             userServiceIMPL.userUpdate(String.valueOf(jTable1.getValueAt(selectrow, 0)), mobile, fname, lname, password, email, status);
@@ -482,6 +519,14 @@ public class UserManagement extends javax.swing.JPanel {
         new UserRole(this).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -489,6 +534,7 @@ public class UserManagement extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel3;

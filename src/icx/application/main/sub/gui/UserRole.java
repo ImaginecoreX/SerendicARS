@@ -5,6 +5,7 @@
 package icx.application.main.sub.gui;
 
 import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.extras.FlatSVGIcon;
 
 /**
  *
@@ -19,6 +20,8 @@ public class UserRole extends javax.swing.JDialog {
      */
     public UserRole(javax.swing.JPanel userManagement) {
         initComponents();
+        reUr.setIcon(new FlatSVGIcon("icx/icon/svg/refresh.svg"));
+        closeuf.setIcon(new FlatSVGIcon("icx/icon/svg/close.svg"));
         this.userManagement = (UserManagement) userManagement;
         this.userManagement.getUserRoleBtn().setEnabled(false);
         this.loadTable();
@@ -30,6 +33,14 @@ public class UserRole extends javax.swing.JDialog {
 
         this.userManagement.getUserServiceIMPL().tableLoadRole(jTable1);
 
+    }
+
+    public void refersh() {
+
+        urolein.setText("");
+        jButton1.setEnabled(true);
+        jButton2.setEnabled(false);
+        
     }
 
     /**
@@ -47,8 +58,8 @@ public class UserRole extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        reUr = new javax.swing.JButton();
+        closeuf = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -92,21 +103,19 @@ public class UserRole extends javax.swing.JDialog {
 
         jPanel1.setLayout(new java.awt.GridLayout(2, 1, 5, 5));
 
-        jButton3.setText("......");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        reUr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                reUrActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
+        jPanel1.add(reUr);
 
-        jButton4.setText("EXIT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        closeuf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                closeufActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
+        jPanel1.add(closeuf);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,10 +162,11 @@ public class UserRole extends javax.swing.JDialog {
         int selectedrow = jTable1.getSelectedRow();
 
         if (selectedrow != -1) {
-      
+            jButton1.setEnabled(false);
             this.userManagement.getUserServiceIMPL().updateUserRole(String.valueOf(jTable1.getValueAt(selectedrow, 0)), urolein.getText());
             loadTable();
-
+             this.userManagement.loadUserTypes();
+            refersh();
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -169,6 +179,8 @@ public class UserRole extends javax.swing.JDialog {
         } else {
             this.userManagement.getUserServiceIMPL().addUserRole(role);
             this.loadTable();
+            this.userManagement.loadUserTypes();
+            this.refersh();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -187,15 +199,16 @@ public class UserRole extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void reUrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reUrActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        this.refersh();
+    }//GEN-LAST:event_reUrActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void closeufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeufActionPerformed
         // TODO add your handling code here:
-         this.userManagement.getUserRoleBtn().setEnabled(true);
+        this.userManagement.getUserRoleBtn().setEnabled(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_closeufActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,13 +253,13 @@ public class UserRole extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton closeuf;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton reUr;
     private javax.swing.JTextField urolein;
     // End of variables declaration//GEN-END:variables
 }
