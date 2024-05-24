@@ -27,6 +27,7 @@ import icx.application.main.sub.FormTicket;
 import icx.application.main.sub.FormUser;
 import icx.menu.Menu;
 import icx.menu.MenuAction;
+import icx.service.impl.UserServiceIMPL;
 
 /**
  *
@@ -102,7 +103,8 @@ public class MainForm extends JLayeredPane {
             }else if(index == 8){
             Application.showForm(new FormNotification());
             }else if (index == 9) {
-                Application.logout();
+                new UserServiceIMPL().logOutUserLogs(String.valueOf(icx.util.loginUser.data.getId()));
+                System.exit(0);
             } else {
                 action.cancel();
             }

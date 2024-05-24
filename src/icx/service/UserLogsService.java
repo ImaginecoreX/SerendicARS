@@ -8,7 +8,7 @@ import javax.swing.JTable;
 
 /**
  *
- * @author 94701
+ * @author Yasith Sandesh
  */
 public interface UserLogsService {
     public boolean addUserLogs(String user_id);
