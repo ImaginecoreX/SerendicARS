@@ -64,6 +64,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             }
 
         } catch (Exception e) {
+            userServiceLogger.warning(e.toString());
         }
 
         return null;
@@ -88,16 +89,18 @@ public class UserServiceIMPL implements UserService, UserLogsService {
 
             return typeIdMap;
         } catch (Exception e) {
-            System.out.println("icx.service.impl.UserServiceIMPL.loadUserTypes()");
+            userServiceLogger.warning(e.toString());
         }
         return null;
     }
 
     @Override
     public void loadUsers(JTable jTable, String query) {
+
+        DefaultTableModel tableModel = (DefaultTableModel) jTable.getModel();
+        tableModel.setRowCount(0);
+
         try {
-            DefaultTableModel tableModel = (DefaultTableModel) jTable.getModel();
-            tableModel.setRowCount(0);
 
             ResultSet resultSet = MySQL.execute(query);
 
@@ -121,7 +124,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             }
 
         } catch (Exception e) {
-            System.out.println("icx.service.impl.UserServiceIMPL.loadUsers()");
+            userServiceLogger.warning(e.toString());
         }
     }
 
@@ -131,7 +134,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             MySQL.execute("INSERT INTO `user`(`mobile`,`fname`,`lname`,`password`,`email`,`user_type_id`) VALUES('" + mobile + "','" + fname + "','" + lname + "','" + password + "','" + email + "','" + userType + "')");
 
         } catch (Exception e) {
-            e.printStackTrace();
+             userServiceLogger.warning(e.toString());
         }
 
     }
@@ -141,7 +144,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("UPDATE `user` SET `mobile`='" + mobile + "',`fname`='" + fname + "',`password`='" + password + "',`email`='" + email + "',`status`='" + status + "' WHERE `u_id`='" + u_id + "'");
         } catch (Exception e) {
-            e.printStackTrace();
+            userServiceLogger.warning(e.toString());
         }
     }
 
@@ -150,7 +153,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("UPDATE `user` SET `status`='" + status + "' WHERE `u_id`='" + u_id + "'");
         } catch (Exception e) {
-            e.printStackTrace();
+             userServiceLogger.warning(e.toString());
         }
     }
 
@@ -159,6 +162,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("INSERT INTO `user_type`(`type`) VALUES('" + type + "')");
         } catch (Exception e) {
+             userServiceLogger.warning(e.toString());
         }
     }
 
@@ -167,7 +171,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("UPDATE `user_type` SET `type`='" + type + "' WHERE `id`='" + id + "'");
         } catch (Exception e) {
-            e.printStackTrace();
+         userServiceLogger.warning(e.toString());
         }
     }
 
@@ -180,7 +184,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             MySQL.execute("INSERT INTO `user_log`(`login_date_time`,`logout_date_time`,`u_id`) VALUES('" + format.format(dateTime) + "','" + format.format(dateTime) + "','" + user_id + "')");
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+          userServiceLogger.warning(e.toString());
         }
         return false;
     }
@@ -198,16 +202,16 @@ public class UserServiceIMPL implements UserService, UserLogsService {
                 row.add(resultSet.getString("ul_id"));
                 row.add(resultSet.getString("login_date_time"));
                 row.add(resultSet.getString("logout_date_time"));
-                row.add(resultSet.getString("fname"));
-                row.add(resultSet.getString("lname"));
-                row.add(resultSet.getString("email"));
-                row.add(resultSet.getString("mobile"));
-                row.add(resultSet.getString("type"));
+//                row.add(resultSet.getString("fname"));
+//                row.add(resultSet.getString("lname"));
+//                row.add(resultSet.getString("email"));
+//                row.add(resultSet.getString("mobile"));
+//                row.add(resultSet.getString("type"));
                 tablemodel.addRow(row);
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            userServiceLogger.warning(e.toString());
         }
     }
 
@@ -218,6 +222,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("UPDATE `user_log` SET `logout_date_time`='" + format.format(dateTime) + "' WHERE `u_id`='" + user_id + "'");
         } catch (Exception e) {
+             userServiceLogger.warning(e.toString());
         }
     }
 
@@ -237,7 +242,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+          userServiceLogger.warning(e.toString());
         }
     }
 
