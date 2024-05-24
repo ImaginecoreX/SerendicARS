@@ -25,12 +25,13 @@ import icx.application.main.sub.FormSchedule;
 import icx.application.main.sub.FormSeat;
 import icx.application.main.sub.FormTicket;
 import icx.application.main.sub.FormUser;
+import icx.application.main.sub.TestUI;
 import icx.menu.Menu;
 import icx.menu.MenuAction;
 
 /**
  *
- * @author Raven
+ * @author sandaruwan
  */
 public class MainForm extends JLayeredPane {
 
@@ -96,7 +97,8 @@ public class MainForm extends JLayeredPane {
             }else if(index == 5){
             Application.showForm(new FormFlight());
             }else if(index == 6){
-            Application.showForm(new FormClass());
+//            Application.showForm(new FormClass());
+Application.showForm(new TestUI());
             }else if(index == 7){
             Application.showForm(new FormSeat());
             }else if(index == 8){
