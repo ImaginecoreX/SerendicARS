@@ -44,7 +44,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbUser">
           <Properties>
-            <Property name="text" type="java.lang.String" value="User Name"/>
+            <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtUser">

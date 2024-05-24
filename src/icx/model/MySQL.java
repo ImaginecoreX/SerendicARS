@@ -8,9 +8,9 @@ import java.sql.Statement;
 public class MySQL {
 
     private static Connection connection;
-    private static String DATABASE = "textile_db";
+    private static String DATABASE = "ars";
     private static String USERNAME = "root";
-    private static String PASSWORD = "Ms2005j@Neru";
+    private static String PASSWORD = "2002MySaG";
 
     static {
         try {

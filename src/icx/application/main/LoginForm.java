@@ -3,6 +3,8 @@ package icx.application.main;
 import com.formdev.flatlaf.FlatClientProperties;
 import net.miginfocom.swing.MigLayout;
 import icx.application.Application;
+import icx.service.impl.UserServiceIMPL;
+import icx.model.UserLoginReturnDTO;
 
 /**
  *
@@ -20,14 +22,14 @@ public class LoginForm extends javax.swing.JPanel {
 
         lbTitle.putClientProperty(FlatClientProperties.STYLE, ""
                 + "font:$h1.font");
-        
+
         txtPass.putClientProperty(FlatClientProperties.STYLE, ""
                 + "showRevealButton:true;"
                 + "showCapsLock:true");
         cmdLogin.putClientProperty(FlatClientProperties.STYLE, ""
                 + "borderWidth:0;"
                 + "focusWidth:0");
-        txtUser.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "User Name");
+        txtUser.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Email");
         txtPass.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Password");
     }
 
@@ -47,7 +49,7 @@ public class LoginForm extends javax.swing.JPanel {
         lbTitle.setText("Login");
         panelLogin1.add(lbTitle);
 
-        lbUser.setText("User Name");
+        lbUser.setText("Email");
         panelLogin1.add(lbUser);
         panelLogin1.add(txtUser);
 
@@ -82,7 +84,28 @@ public class LoginForm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
-        Application.login();
+            Application.login();
+
+
+//        String email = txtUser.getText();
+//        String password = String.valueOf(txtPass.getPassword());
+//        if (email.isEmpty()) {
+//
+//        } else if (password.isEmpty()) {
+//
+//        } else {
+//
+//            UserServiceIMPL userService = new UserServiceIMPL();
+//            UserLoginReturnDTO userloginReturnDTO = userService.userLogin(email, password);
+//            if (userloginReturnDTO.isLogin()) {
+//                System.out.println(userloginReturnDTO.getUserData().getFirstName());
+//                Application.login();
+//            } else {
+//                System.out.println(userloginReturnDTO.getMsg());
+//            }
+//
+//        }
+
     }//GEN-LAST:event_cmdLoginActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
