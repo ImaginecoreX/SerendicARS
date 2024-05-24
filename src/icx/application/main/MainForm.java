@@ -30,7 +30,7 @@ import icx.menu.MenuAction;
 
 /**
  *
- * @author Raven
+ * @author sandaruwan
  */
 public class MainForm extends JLayeredPane {
 
