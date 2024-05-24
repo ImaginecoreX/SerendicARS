@@ -5,6 +5,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
+
 <record>
   <date>2024-05-24T20:19:41.533538700Z</date>
   <millis>1716581981533</millis>
@@ -29,6 +30,7 @@
   <thread>18</thread>
   <message>java.lang.ArithmeticException: / by zero</message>
 </record>
+
 </log>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
