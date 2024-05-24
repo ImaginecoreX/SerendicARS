@@ -28,6 +28,7 @@ import icx.application.main.sub.FormUser;
 import icx.application.main.sub.TestUI;
 import icx.menu.Menu;
 import icx.menu.MenuAction;
+import icx.service.impl.UserServiceIMPL;
 
 /**
  *
@@ -104,7 +105,8 @@ Application.showForm(new TestUI());
             }else if(index == 8){
             Application.showForm(new FormNotification());
             }else if (index == 9) {
-                Application.logout();
+                new UserServiceIMPL().logOutUserLogs(String.valueOf(icx.util.loginUser.data.getId()));
+                System.exit(0);
             } else {
                 action.cancel();
             }
