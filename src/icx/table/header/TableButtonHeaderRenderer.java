@@ -22,16 +22,19 @@ public class TableButtonHeaderRenderer extends JPanel implements TableCellRender
     private final JTable table;
     private final int column;
     private final JButton button;
+    private final TableButtonHeaderEvent event;
 
-    public TableButtonHeaderRenderer(JTable table, int column, String buttonText) {
+    public TableButtonHeaderRenderer(JTable table, int column, String buttonText, TableButtonHeaderEvent event) {
         this.table = table;
         this.column = column;
         this.button = new JButton(buttonText);
+        this.event = event;
         init();
     }
 
     private void run() {
         System.out.println("Clicked");
+        event.run();
     }
     
     private void init() {

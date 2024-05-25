@@ -32,7 +32,9 @@ public class FormPassenger extends javax.swing.JPanel {
             System.out.println(row);
         }));
 
-        passengerTable.getColumnModel().getColumn(7).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 7, "Print Report"));
+        passengerTable.getColumnModel().getColumn(7).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 7, "Print Report", () -> {
+            System.out.println("Print Report");
+        }));
 
         passengerTable.getColumnModel().getColumn(7).setCellRenderer(new TableSwitchButtonCellRenderer());
         passengerTable.getColumnModel().getColumn(7).setCellEditor(new TableSwitchButtonCellEditor((boolean selected) -> {
