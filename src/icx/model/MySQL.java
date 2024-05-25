@@ -3,14 +3,15 @@ package icx.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MySQL {
 
     private static Connection connection;
     private static String DATABASE = "textile_db";
-    private static String USERNAME = "root";
-    private static String PASSWORD = "Ms2005j@Neru";
+    private static String USERNAME = "sahan";
+    private static String PASSWORD = "Sahan@0602";
 
     static {
         try {
@@ -21,7 +22,13 @@ public class MySQL {
         }
     }
 
-    public static ResultSet execute(String query) throws Exception {
+    /**
+     *
+     * @param query
+     * @return ResultSet of the Executed Query
+     * @throws SQLException
+     */
+    public static ResultSet execute(String query) throws SQLException {
 
         Statement statement = connection.createStatement();
 
