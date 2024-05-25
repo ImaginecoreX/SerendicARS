@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author sandaruwan
+ * @author Yasith Sandesh
  */
 public class UserServiceIMPL implements UserService, UserLogsService {
 
@@ -122,6 +122,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
                 tableModel.addRow(rowData);
 
             }
+            
 
         } catch (Exception e) {
             userServiceLogger.warning(e.toString());

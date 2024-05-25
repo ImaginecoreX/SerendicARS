@@ -15,7 +15,7 @@ public class Validation {
     }
 
     public static boolean email(String email) {
-        return !email.matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@\"\n\"[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$");
+        return false;
     }
 
     public static boolean password(String password) {

@@ -17,7 +17,7 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
  */
 public class UserManagement extends javax.swing.JPanel {
 
-    private UserServiceIMPL userServiceIMPL = new UserServiceIMPL();
+    private UserServiceIMPL userServiceIMPL;
 
     private HashMap<String, String> userTypesId;
 
@@ -28,8 +28,9 @@ public class UserManagement extends javax.swing.JPanel {
     /**
      * Creates new form UserManagement
      */
-    public UserManagement() {
+    public UserManagement(UserServiceIMPL userServiceIMPL) {
         initComponents();
+        this.userServiceIMPL = userServiceIMPL;
         this.userTypesId = userServiceIMPL.loadUserTypes(jComboBox1);
         userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` ORDER BY `u_id` ASC");
         jButton4.setEnabled(false);
@@ -37,6 +38,7 @@ public class UserManagement extends javax.swing.JPanel {
         jComboBox2.setEnabled(false);
         jButton5.setText("");
         jButton5.setIcon(new FlatSVGIcon("icx/icon/svg/refresh.svg", 0.5f));
+
     }
 
     public UserServiceIMPL getUserServiceIMPL() {
@@ -233,6 +235,12 @@ public class UserManagement extends javax.swing.JPanel {
                     .addContainerGap(378, Short.MAX_VALUE)))
         );
 
+        jPanel2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jPanel2KeyReleased(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("SF Pro Display", 0, 14)); // NOI18N
         jLabel3.setText("First Name");
 
@@ -382,7 +390,13 @@ public class UserManagement extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectRow = jTable1.getSelectedRow();
         if (selectRow != -1) {
-            new UserLogs(this, String.valueOf(jTable1.getValueAt(selectRow, 0))).setVisible(true);
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("fname", jTable1.getValueAt(selectRow, 1));
+            map.put("lname", jTable1.getValueAt(selectRow, 2));
+            map.put("mobile", jTable1.getValueAt(selectRow, 4));
+            map.put("email", jTable1.getValueAt(selectRow, 5));
+            map.put("role", jTable1.getValueAt(selectRow, 6));
+            new UserLogs(this, String.valueOf(jTable1.getValueAt(selectRow, 0)),map).setVisible(true);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -526,6 +540,10 @@ public class UserManagement extends javax.swing.JPanel {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jPanel2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2KeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
