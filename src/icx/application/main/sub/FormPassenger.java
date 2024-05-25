@@ -408,8 +408,6 @@ public class FormPassenger extends javax.swing.JPanel {
     private javax.swing.JPanel flightPanel;
     private javax.swing.JPanel headContainer;
     private javax.swing.JButton jButton1;
-    private main.JImagePanel jImagePanel2;
-    private main.JImagePanel jImagePanel4;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
