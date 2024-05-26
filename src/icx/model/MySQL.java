@@ -13,15 +13,15 @@ import java.sql.Statement;
 public class MySQL {
 
     private static Connection connection;
-//        private static String URL = "sql213.infinityfree.com";
+//    private static String URL = "sql213.infinityfree.com";
 //    private static String DATABASE = "if0_36604738_ars_db";
 //    private static String USERNAME = "if0_36604738";
 //    private static String PASSWORD = "EVmt1ZsboG97";
 //    private static String PORT = "3306";
     private static String URL = "localhost";
-    private static String DATABASE = "ars";
-    private static String USERNAME = "root";
-    private static String PASSWORD = "Ms2005j@Neru";
+    private static String DATABASE = "textile_db";
+    private static String USERNAME = "sahan";
+    private static String PASSWORD = "Sahan@123";
     private static String PORT = "3306";
 
     static {

@@ -1,5 +1,6 @@
 package icx.util;
 
+import com.formdev.flatlaf.extras.FlatSVGIcon;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -16,4 +17,10 @@ public class ImageScaler {
         Image image = (imageIcon).getImage().getScaledInstance(width, height, Image.SCALE_AREA_AVERAGING);
         return new ImageIcon(image);
     }
+
+    public FlatSVGIcon getSvgIcon(String image, int width, int hight) {
+        FlatSVGIcon svgIcon = new FlatSVGIcon(image, width, hight);
+        return svgIcon;
+    }
+
 }
