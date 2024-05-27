@@ -52,7 +52,7 @@ public class FormDashboard extends javax.swing.JPanel {
                 .addComponent(lb)
                 .addGap(173, 173, 173)
                 .addComponent(jButton1)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
