@@ -13,6 +13,7 @@ import icx.model.UserLoginReturnDTO;
 import javax.swing.JOptionPane;
 import icx.model.UserDTO;
 import icx.service.UserLogsService;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.FileHandler;
@@ -88,7 +89,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             jcombobox.setSelectedIndex(0);
 
             return typeIdMap;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             userServiceLogger.warning(e.toString());
         }
         return null;

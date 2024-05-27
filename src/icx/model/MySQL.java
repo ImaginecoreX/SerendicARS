@@ -19,7 +19,7 @@ public class MySQL {
 //    private static String PASSWORD = "EVmt1ZsboG97";
 //    private static String PORT = "3306";
     private static String URL = "localhost";
-    private static String DATABASE = "textile_db";
+    private static String DATABASE = "ars";
     private static String USERNAME = "sahan";
     private static String PASSWORD = "Sahan@123";
     private static String PORT = "3306";

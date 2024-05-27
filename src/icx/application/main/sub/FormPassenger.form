@@ -44,7 +44,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="searchPanelContainer" max="32767" attributes="0"/>
                   <Component id="jSeparator1" max="32767" attributes="0"/>
@@ -62,8 +62,9 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="moreButton" min="-2" pref="51" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jSeparator5" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,10 +73,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="recentFlightsScroll" alignment="2" min="-2" pref="223" max="-2" attributes="0"/>
+                  <Component id="recentFlightsScroll" alignment="2" min="-2" pref="199" max="-2" attributes="0"/>
                   <Component id="moreButton" alignment="2" min="-2" pref="70" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -84,10 +85,12 @@
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="headContainer" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="searchPanelContainer" min="-2" pref="250" max="-2" attributes="0"/>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Component id="passengerScroll" pref="217" max="32767" attributes="0"/>
+              <Component id="searchPanelContainer" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="passengerScroll" pref="241" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -150,12 +153,12 @@
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                           <Component id="count1" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="passengerCount1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="flight1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="countHead1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dateHead" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="flightName1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="dateText" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -165,11 +168,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="flight1" min="-2" max="-2" attributes="0"/>
+                          <Component id="dateHead" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="flightName1" min="-2" max="-2" attributes="0"/>
+                          <Component id="dateText" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="passengerCount1" min="-2" max="-2" attributes="0"/>
+                          <Component id="countHead1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="count1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
@@ -180,37 +183,37 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="flight1">
+                <Component class="javax.swing.JLabel" name="dateHead">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="20" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Flight: "/>
+                    <Property name="text" type="java.lang.String" value="Date"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="flightName1">
+                <Component class="javax.swing.JLabel" name="dateText">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="20" style="0"/>
+                      <Font name="SansSerif" size="20" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="FlightName"/>
+                    <Property name="text" type="java.lang.String" value="2024-05-17"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="passengerCount1">
+                <Component class="javax.swing.JLabel" name="countHead1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="16" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Passenger Count:"/>
+                    <Property name="text" type="java.lang.String" value="Total Passengers:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="count1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="16" style="0"/>
+                      <Font name="SansSerif" size="16" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="100"/>
+                    <Property name="text" type="java.lang.String" value="150"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="otherDetails1">
@@ -242,19 +245,19 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="flight2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="otherDetails2" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="flightName2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="count2" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="passengerCount2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="count2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="countHead2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="flightHead2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="67" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="otherDetails2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="flight2" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -264,38 +267,39 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="count2" min="-2" max="-2" attributes="0"/>
+                          <Component id="flightHead2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="otherDetails2" min="-2" max="-2" attributes="0"/>
+                          <Component id="flight2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="passengerCount2" min="-2" max="-2" attributes="0"/>
+                          <Component id="countHead2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="flightName2" min="-2" max="-2" attributes="0"/>
+                          <Component id="count2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="flight2" max="32767" attributes="0"/>
+                          <Component id="otherDetails2" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
+                <Component class="javax.swing.JLabel" name="flightHead2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="20" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Flight: "/>
+                  </Properties>
+                </Component>
                 <Component class="javax.swing.JLabel" name="flight2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="14" style="0"/>
+                      <Font name="SansSerif" size="20" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Other Details"/>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="FlightName"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="flightName2">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="16" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="100"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="passengerCount2">
+                <Component class="javax.swing.JLabel" name="countHead2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="16" style="0"/>
@@ -306,18 +310,17 @@
                 <Component class="javax.swing.JLabel" name="count2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="20" style="0"/>
+                      <Font name="SansSerif" size="16" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Flight: "/>
+                    <Property name="text" type="java.lang.String" value="100"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="otherDetails2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="20" style="0"/>
+                      <Font name="SansSerif" size="14" style="0"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="FlightName"/>
+                    <Property name="text" type="java.lang.String" value="Other Details"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -340,19 +343,19 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="flight3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="otherDetails3" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="flightName3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="count3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="passengerCount3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="count3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="countHead3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="flightHead3" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="67" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="otherDetails3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="flight3" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -362,38 +365,39 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="count3" min="-2" max="-2" attributes="0"/>
+                          <Component id="flightHead3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="otherDetails3" min="-2" max="-2" attributes="0"/>
+                          <Component id="flight3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="passengerCount3" min="-2" max="-2" attributes="0"/>
+                          <Component id="countHead3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="flightName3" min="-2" max="-2" attributes="0"/>
+                          <Component id="count3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="flight3" max="32767" attributes="0"/>
+                          <Component id="otherDetails3" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
+                <Component class="javax.swing.JLabel" name="flightHead3">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="20" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Flight: "/>
+                  </Properties>
+                </Component>
                 <Component class="javax.swing.JLabel" name="flight3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="14" style="0"/>
+                      <Font name="SansSerif" size="20" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Other Details"/>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="FlightName"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="flightName3">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="16" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="100"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="passengerCount3">
+                <Component class="javax.swing.JLabel" name="countHead3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="16" style="0"/>
@@ -404,18 +408,17 @@
                 <Component class="javax.swing.JLabel" name="count3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="20" style="0"/>
+                      <Font name="SansSerif" size="16" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Flight: "/>
+                    <Property name="text" type="java.lang.String" value="100"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="otherDetails3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="20" style="0"/>
+                      <Font name="SansSerif" size="14" style="0"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="FlightName"/>
+                    <Property name="text" type="java.lang.String" value="Other Details"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -436,54 +439,45 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="flight4" max="32767" attributes="0"/>
+                                  <Component id="otherDetails4" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="flightName4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="count4" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="passengerCount4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="count4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="countHead4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="flightHead4" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="61" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="73" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Component id="otherDetails4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="flight4" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="count4" min="-2" max="-2" attributes="0"/>
+                          <Component id="flightHead4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="otherDetails4" min="-2" max="-2" attributes="0"/>
+                          <Component id="flight4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="passengerCount4" min="-2" max="-2" attributes="0"/>
+                          <Component id="countHead4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="flightName4" min="-2" max="-2" attributes="0"/>
+                          <Component id="count4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="flight4" max="32767" attributes="0"/>
+                          <Component id="otherDetails4" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="otherDetails4">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="20" style="0"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="FlightName"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="count4">
+                <Component class="javax.swing.JLabel" name="flightHead4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="20" style="0"/>
@@ -491,7 +485,16 @@
                     <Property name="text" type="java.lang.String" value="Flight: "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="passengerCount4">
+                <Component class="javax.swing.JLabel" name="flight4">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="20" style="1"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="FlightName"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="countHead4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="16" style="0"/>
@@ -499,15 +502,15 @@
                     <Property name="text" type="java.lang.String" value="Passenger Count:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="flightName4">
+                <Component class="javax.swing.JLabel" name="count4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="16" style="0"/>
+                      <Font name="SansSerif" size="16" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="100"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="flight4">
+                <Component class="javax.swing.JLabel" name="otherDetails4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="14" style="0"/>
@@ -547,11 +550,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Component id="title" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="butonContainer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Component id="butonContainer" min="-2" pref="420" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -559,9 +562,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="title" min="-2" max="-2" attributes="0"/>
-                      <Component id="butonContainer" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="title" max="32767" attributes="0"/>
+                      <Component id="butonContainer" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -575,6 +578,11 @@
               <Font name="SansSerif" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Passenger Management"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="0" left="1" right="1" top="0"/>
+              </Border>
+            </Property>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="butonContainer">
@@ -590,29 +598,44 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="66" type="rgb"/>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Add Passenger"/>
                 <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                   <Insets value="[2, 5, 3, 5]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPassengerButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="updatePassengerButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="0" type="rgb"/>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Update Passenger"/>
                 <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                   <Insets value="[2, 5, 3, 5]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updatePassengerButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="deletePassengerButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Delete Passenger"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Checkin"/>
                 <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                   <Insets value="[2, 5, 3, 5]"/>
                 </Property>
@@ -624,10 +647,25 @@
     </Container>
     <Container class="javax.swing.JPanel" name="searchPanelContainer">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-        <Property name="columns" type="int" value="0"/>
-        <Property name="horizontalGap" type="int" value="10"/>
-        <Property name="rows" type="int" value="1"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Component id="destinationPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="flightPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="classPanel" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="destinationPanel" min="-2" max="-2" attributes="0"/>
+              <Component id="flightPanel" min="-2" max="-2" attributes="0"/>
+              <Component id="classPanel" min="-2" max="-2" attributes="0"/>
+          </Group>
+        </DimensionLayout>
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="destinationPanel">
@@ -646,12 +684,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
-                          <Component id="destinationField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="destinationContainer" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="141" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="destinationContainer" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -665,8 +703,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="destinationField" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="destinationContainer" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -683,11 +721,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
-            </Component>
-            <Component class="javax.swing.JTextField" name="destinationField">
-              <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="destinationFieldKeyReleased"/>
-              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="destinationContainer">
 
@@ -729,12 +762,12 @@
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
                               <Renderer/>
@@ -749,6 +782,58 @@
                     </Component>
                   </SubComponents>
                 </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel1">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="destinationField" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="allDestinationsButton" min="-2" pref="79" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="destinationField" pref="32" max="32767" attributes="0"/>
+                              <Component id="allDestinationsButton" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="allDestinationsButton">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="10" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new ImageScaler().getSvgIcon(&quot;icx/icon/svg/refresh.svg&quot;, 24, 24)&#xd;&#xa;" type="code"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="View All"/>
+                    <Property name="iconTextGap" type="int" value="2"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[2, 2, 3, 3]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allDestinationsButtonActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="destinationField">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="destinationFieldKeyReleased"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -769,12 +854,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="190" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="flightField" alignment="0" max="32767" attributes="0"/>
                           <Component id="flightContainer" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -788,8 +873,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="flightField" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel2" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="flightContainer" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -807,11 +892,6 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator3">
             </Component>
-            <Component class="javax.swing.JTextField" name="flightField">
-              <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="flightFieldKeyReleased"/>
-              </Events>
-            </Component>
             <Container class="javax.swing.JPanel" name="flightContainer">
 
               <Layout>
@@ -828,7 +908,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="flightScroll" pref="140" max="32767" attributes="0"/>
+                          <Component id="flightScroll" pref="139" max="32767" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -845,19 +925,25 @@
                     <Component class="javax.swing.JTable" name="flightTable">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="2" rowCount="0">
+                          <Table columnCount="3" rowCount="0">
                             <Column editable="false" title="Flight" type="java.lang.Object"/>
-                            <Column editable="false" title="TIme" type="java.lang.Object"/>
+                            <Column editable="false" title="From" type="java.lang.Object"/>
+                            <Column editable="false" title="To" type="java.lang.Object"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
                               <Renderer/>
                             </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
                               <Renderer/>
@@ -872,6 +958,58 @@
                     </Component>
                   </SubComponents>
                 </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel2">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="flightField" pref="335" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="allFlightsButton" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="allFlightsButton" max="32767" attributes="0"/>
+                              <Component id="flightField" pref="32" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="allFlightsButton">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="10" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new ImageScaler().getSvgIcon(&quot;icx/icon/svg/refresh.svg&quot;, 24, 24)&#xd;&#xa;" type="code"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="View All"/>
+                    <Property name="iconTextGap" type="int" value="2"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[2, 2, 3, 3]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allFlightsButtonActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="flightField">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="flightFieldKeyReleased"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -892,12 +1030,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator4" alignment="1" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="191" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="classField" alignment="0" max="32767" attributes="0"/>
                           <Component id="classContainer" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -911,8 +1049,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="classField" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel3" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="classContainer" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -930,11 +1068,6 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator4">
             </Component>
-            <Component class="javax.swing.JTextField" name="classField">
-              <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="classFieldKeyReleased"/>
-              </Events>
-            </Component>
             <Container class="javax.swing.JPanel" name="classContainer">
 
               <Layout>
@@ -951,7 +1084,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="classScroll" pref="140" max="32767" attributes="0"/>
+                          <Component id="classScroll" pref="138" max="32767" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -968,19 +1101,13 @@
                     <Component class="javax.swing.JTable" name="classTable">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="2" rowCount="0">
+                          <Table columnCount="1" rowCount="0">
                             <Column editable="false" title="Class" type="java.lang.Object"/>
-                            <Column editable="false" title="Type" type="java.lang.Object"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
                               <Renderer/>
@@ -995,6 +1122,58 @@
                     </Component>
                   </SubComponents>
                 </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel3">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="classField" pref="132" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="allClassesButton" min="-2" pref="79" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="classField" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="allClassesButton" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="classField">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="classFieldActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="classFieldKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="allClassesButton">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="10" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new ImageScaler().getSvgIcon(&quot;icx/icon/svg/refresh.svg&quot;, 24, 24)&#xd;&#xa;" type="code"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="View All"/>
+                    <Property name="iconTextGap" type="int" value="2"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[2, 2, 3, 3]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allClassesButtonActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -1088,6 +1267,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="moreButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator5">
     </Component>
   </SubComponents>
 </Form>

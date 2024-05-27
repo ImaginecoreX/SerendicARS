@@ -1,6 +1,9 @@
 package icx.application.main.sub.passenger;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import icx.model.Passenger;
+import icx.service.impl.PassengerSeviceIMPL;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -8,11 +11,44 @@ import com.formdev.flatlaf.FlatDarkLaf;
  */
 public class AddPassenger extends javax.swing.JDialog {
 
+    private PassengerSeviceIMPL passengerSeviceIMPL = new PassengerSeviceIMPL();
+
     /**
      * Creates new form AddPassenger
      */
     public AddPassenger(javax.swing.JPanel parent) {
         initComponents();
+        loadPassengerStatus();
+    }
+
+    private void loadPassengerStatus() {
+        passengerSeviceIMPL.loadPassengerStatus(statusComboBox);
+    }
+
+    private void addPassenger() {
+        String fname = firstNameField.getText();
+        String lname = lastNameField.getText();
+        String passport = passportField.getText();
+        String status = String.valueOf(statusComboBox.getSelectedItem());;
+
+        if (fname.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter First Name", "Warning: First Name", JOptionPane.WARNING_MESSAGE);
+            firstNameField.requestFocus();
+        } else if (lname.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Last Name", "Warning: Last Name", JOptionPane.WARNING_MESSAGE);
+            lastNameField.requestFocus();
+        } else if (passport.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Passport Number", "Warning: Passport Number", JOptionPane.WARNING_MESSAGE);
+            passportField.requestFocus();
+        } else if (status.toLowerCase().equals("select") || status == null) {
+            JOptionPane.showMessageDialog(this, "Please select Status", "Warning: Status", JOptionPane.WARNING_MESSAGE);
+            statusComboBox.requestFocus();
+        } else {
+
+            Passenger passenger = new Passenger(fname, lname, passport, status.toLowerCase());
+
+            passengerSeviceIMPL.addPassenger(passenger, this);
+        }
     }
 
     /**
@@ -35,7 +71,7 @@ public class AddPassenger extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         passportField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        emailField = new javax.swing.JTextField();
+        statusComboBox = new javax.swing.JComboBox<>();
         addButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -60,9 +96,9 @@ public class AddPassenger extends javax.swing.JDialog {
         passportField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel5.setText("Email");
+        jLabel5.setText("Status");
 
-        emailField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "Active", "Inactive" }));
 
         javax.swing.GroupLayout fieldPanelLayout = new javax.swing.GroupLayout(fieldPanel);
         fieldPanel.setLayout(fieldPanelLayout);
@@ -74,14 +110,14 @@ public class AddPassenger extends javax.swing.JDialog {
                     .addComponent(passportField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(firstNameField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lastNameField, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(emailField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(fieldPanelLayout.createSequentialGroup()
                         .addGroup(fieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(statusComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         fieldPanelLayout.setVerticalGroup(
@@ -102,12 +138,17 @@ public class AddPassenger extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(statusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         addButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         addButton.setText("Add");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout containerLayout = new javax.swing.GroupLayout(container);
         container.setLayout(containerLayout);
@@ -135,7 +176,7 @@ public class AddPassenger extends javax.swing.JDialog {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -152,13 +193,19 @@ public class AddPassenger extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // Add Passenger
+
+        addPassenger();
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,7 +232,6 @@ public class AddPassenger extends javax.swing.JDialog {
     private javax.swing.JLabel Title;
     private javax.swing.JButton addButton;
     private javax.swing.JPanel container;
-    private javax.swing.JTextField emailField;
     private javax.swing.JPanel fieldPanel;
     private javax.swing.JTextField firstNameField;
     private javax.swing.JLabel jLabel2;
@@ -195,5 +241,6 @@ public class AddPassenger extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField lastNameField;
     private javax.swing.JTextField passportField;
+    private javax.swing.JComboBox<String> statusComboBox;
     // End of variables declaration//GEN-END:variables
 }
