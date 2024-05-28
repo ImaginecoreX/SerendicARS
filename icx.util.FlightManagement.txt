@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-27T12:29:29.679748Z</date>
+  <millis>1716812969679</millis>
+  <nanos>748000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>WARNING</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logWarning</method>
+  <thread>33</thread>
+  <message>Before start of result set</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-27T12:49:41.307939Z</date>
+  <millis>1716814181307</millis>
+  <nanos>939000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>WARNING</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logWarning</method>
+  <thread>33</thread>
+  <message>SQL Error: No distance found between the specified airports.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-27T16:14:02.557791Z</date>
+  <millis>1716826442557</millis>
+  <nanos>791000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>SEVERE</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logSevere</method>
+  <thread>33</thread>
+  <message>Table 'ars.distance' doesn't exist</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-27T16:18:45.748279Z</date>
+  <millis>1716826725748</millis>
+  <nanos>279000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>SEVERE</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logSevere</method>
+  <thread>33</thread>
+  <message>Unknown column 'airport1Id' in 'field list'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-27T17:54:58.969766Z</date>
+  <millis>1716832498969</millis>
+  <nanos>766000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>WARNING</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logWarning</method>
+  <thread>33</thread>
+  <message>SQL Error: No distance found between the specified airports.</message>
+</record>
+<record>
+  <date>2024-05-27T17:55:02.249261Z</date>
+  <millis>1716832502249</millis>
+  <nanos>261000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.util</logger>
+  <level>WARNING</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logWarning</method>
+  <thread>33</thread>
+  <message>SQL Error: No distance found between the specified airports.</message>
+</record>
+<record>
+  <date>2024-05-27T17:55:05.134403Z</date>
+  <millis>1716832505134</millis>
+  <nanos>403000</nanos>
+  <sequence>2</sequence>
+  <logger>icx.util</logger>
+  <level>WARNING</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logWarning</method>
+  <thread>33</thread>
+  <message>SQL Error: No distance found between the specified airports.</message>
+</record>
+<record>
+  <date>2024-05-27T17:55:09.336670Z</date>
+  <millis>1716832509336</millis>
+  <nanos>670000</nanos>
+  <sequence>3</sequence>
+  <logger>icx.util</logger>
+  <level>WARNING</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logWarning</method>
+  <thread>33</thread>
+  <message>SQL Error: No distance found between the specified airports.</message>
+</record>
+</log>

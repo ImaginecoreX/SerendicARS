@@ -88,7 +88,7 @@ public class LoginForm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
-//            Application.login();
+
 
         String email = txtUser.getText();
         String password = String.valueOf(txtPass.getPassword());
@@ -114,6 +114,10 @@ public class LoginForm extends javax.swing.JPanel {
             }
 
         }
+
+
+
+
 
     }//GEN-LAST:event_cmdLoginActionPerformed
 

@@ -3,6 +3,7 @@ package icx.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
@@ -33,7 +34,13 @@ public class MySQL {
         }
     }
 
-    public static ResultSet execute(String query) throws Exception {
+    /**
+     *
+     * @param query
+     * @return ResultSet of the Executed Query
+     * @throws SQLException
+     */
+    public static ResultSet execute(String query) throws SQLException {
 
         Statement statement = connection.createStatement();
 
