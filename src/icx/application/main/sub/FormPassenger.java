@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import icx.application.main.sub.passenger.ViewPassenger;
 import icx.loggers.PassengerLogger;
 import icx.loggers.DatabaseLogger;
 import icx.model.MySQL;
@@ -74,19 +75,7 @@ public class FormPassenger extends javax.swing.JPanel {
         recentFlightDetailPanel1.putClientProperty(FlatClientProperties.STYLE, ""
                 + "background:lighten($SubPanel.background, 10%);"
                 + "arc:25;");
-        /*
-         *  Hiding the JTable and JScrollPane doesn't work well;
-         *
-         *        JTable[] tables = {destinationTable, flightTable, classTable};
-         *        for (JTable table : tables) {
-         *            table.setVisible(false);
-         *        }
-         *
-         *        JScrollPane[] containers = {destinationScroll, flightScroll, classScroll};
-         *        for (JScrollPane container : containers) {
-         *            container.setVisible(false);
-         *        }
-         */
+
         JPanel[] containers = {destinationContainer, flightContainer, classContainer};
         for (JPanel container : containers) {
             container.setVisible(false);
@@ -101,20 +90,23 @@ public class FormPassenger extends javax.swing.JPanel {
         new TableContentCenterCellRenderer().renderTable(passengerTable);
         passengerTable.getColumnModel().getColumn(0).setHeaderRenderer(new TableCheckBoxHeaderRenderer(passengerTable, 0));
 
-        passengerTable.getColumnModel().getColumn(6).setCellRenderer(new TableButtonCellRenderer("View", "", (int row) -> {
-            System.out.println(row);
+        passengerTable.getColumnModel().getColumn(7).setCellRenderer(new TableButtonCellRenderer("View", "", (int row) -> {
+            String ticket = String.valueOf(passengerTable.getValueAt(row, 2));
+            ViewPassenger viewPassenger = new ViewPassenger(this);
+            viewPassenger.loadPassengerData(ticket);
+            viewPassenger.setVisible(true);
         }));
 
-        passengerTable.getColumnModel().getColumn(6).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 6, "refresh", "icx/icon/svg/refresh.svg", () -> {
+        passengerTable.getColumnModel().getColumn(7).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 7, "refresh", "icx/icon/svg/refresh.svg", () -> {
             reset();
         }));
 
-        passengerTable.getColumnModel().getColumn(7).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 7, "Print Report", () -> {
+        passengerTable.getColumnModel().getColumn(8).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 8, "Print Report", () -> {
             System.out.println("Print Report");
         }));
 
-        passengerTable.getColumnModel().getColumn(7).setCellRenderer(new TableSwitchButtonCellRenderer());
-        passengerTable.getColumnModel().getColumn(7).setCellEditor(new TableSwitchButtonCellEditor((boolean selected) -> {
+        passengerTable.getColumnModel().getColumn(8).setCellRenderer(new TableSwitchButtonCellRenderer());
+        passengerTable.getColumnModel().getColumn(8).setCellEditor(new TableSwitchButtonCellEditor((boolean selected) -> {
             System.out.println(selected);
         }));
     }
@@ -139,8 +131,6 @@ public class FormPassenger extends javax.swing.JPanel {
      */
     private void loadDestinations(String destination) {
         destinationContainer.setVisible(true);
-        //destinationScroll.setVisible(true);
-        //destinationTable.setVisible(true);
 
         DefaultTableModel model = (DefaultTableModel) destinationTable.getModel();
         model.setRowCount(0);
@@ -169,8 +159,6 @@ public class FormPassenger extends javax.swing.JPanel {
 
     private void loadFlights(String flight) {
         flightContainer.setVisible(true);
-        //flightScroll.setVisible(true);
-        //flightField.setVisible(true);
 
         DefaultTableModel model = (DefaultTableModel) flightTable.getModel();
         model.setRowCount(0);
@@ -207,8 +195,6 @@ public class FormPassenger extends javax.swing.JPanel {
 
     private void loadClasses(String className) {
         classContainer.setVisible(true);
-        //classScroll.setVisible(true);
-        //classTable.setVisible(true);
 
         DefaultTableModel model = (DefaultTableModel) classTable.getModel();
         model.setRowCount(0);
@@ -277,6 +263,7 @@ public class FormPassenger extends javax.swing.JPanel {
                 rowData.add(false);
                 rowData.add(resultSet.getString("passenger.fname") + " " + resultSet.getString("passenger.lname"));
                 rowData.add(resultSet.getString("ticket.t_id"));
+                rowData.add(resultSet.getString("flights.flight_number"));
                 rowData.add(resultSet.getString("seat.s_id") + " : " + resultSet.getString("class_type"));
                 rowData.add(resultSet.getString("ticket.status"));
                 rowData.add(resultSet.getString("passenger.passport_id"));
@@ -1148,14 +1135,14 @@ public class FormPassenger extends javax.swing.JPanel {
 
             },
             new String [] {
-                "", "Passengers", "Ticket No", "Seat No/CI", "Status", "Passport No", "", "Print Report"
+                "", "Passengers", "Ticket No", "Flight", "Seat No/CI", "Status", "Passport No", "", "Print Report"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, false, true, true
+                true, false, false, false, false, false, false, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1171,6 +1158,9 @@ public class FormPassenger extends javax.swing.JPanel {
         passengerScroll.setViewportView(passengerTable);
         if (passengerTable.getColumnModel().getColumnCount() > 0) {
             passengerTable.getColumnModel().getColumn(0).setMaxWidth(50);
+            passengerTable.getColumnModel().getColumn(5).setPreferredWidth(40);
+            passengerTable.getColumnModel().getColumn(7).setPreferredWidth(50);
+            passengerTable.getColumnModel().getColumn(8).setPreferredWidth(50);
         }
 
         moreButton.setBackground(Constants.TRANSPARENT);

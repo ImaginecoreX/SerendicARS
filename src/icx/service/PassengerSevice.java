@@ -19,7 +19,7 @@ public interface PassengerSevice {
     public void openManagePassenger(JPanel parent);
     
     public boolean loadPassengers(String text, JTable passengerTable);
-    
+        
     public void updatePassenger(Passenger passengerDTO, JDialog parent);
     
     public void addPassenger(Passenger passengerDTO, JDialog parent);
