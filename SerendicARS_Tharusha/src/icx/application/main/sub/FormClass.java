@@ -2,6 +2,8 @@ package icx.application.main.sub;
 
 import com.formdev.flatlaf.FlatClientProperties;
 import icx.model.MySQL;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.Date;
 import java.util.HashMap;
@@ -65,6 +67,31 @@ public class FormClass extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error creating tabs: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void print(String reportFilePath, HashMap<String, Object> map, String dbName, String username, String password) {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName, username, password);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(reportFilePath, map, connection);
+            
+            if (jasperPrint.getPages().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "The generated report has no pages.", "Report Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JasperViewer.viewReport(jasperPrint, false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error generating report: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -319,22 +346,9 @@ public class FormClass extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         try {
-
-        String reportPath = "src/report/class_report.jasper";
-
-        Date currentDate = new Date();
-
-        HashMap<String, Object> parameters = new HashMap<>();
-        parameters.put("Parameter1", currentDate);
-
-        JasperPrint jasperPrint = JasperFillManager.fillReport(reportPath, parameters, new JREmptyDataSource());
-
-        JasperViewer.viewReport(jasperPrint, false);
-
-    } catch (JRException e) {
-        JOptionPane.showMessageDialog(this, "Error generating report: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
-    }
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("reportDate", new Date());
+        print("src/report/class_report.jasper", params, "ars", "root", "Java@tharu10");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
