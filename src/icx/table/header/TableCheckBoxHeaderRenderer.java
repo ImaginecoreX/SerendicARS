@@ -13,6 +13,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.border.MatteBorder;
 import javax.swing.table.TableCellRenderer;
 
 public class TableCheckBoxHeaderRenderer extends JCheckBox implements TableCellRenderer {
@@ -29,6 +30,7 @@ public class TableCheckBoxHeaderRenderer extends JCheckBox implements TableCellR
     private void init() {
         setHorizontalAlignment(SwingConstants.CENTER);
         putClientProperty(FlatClientProperties.STYLE, "background:$Table.background");
+        this.setBorder(new MatteBorder(0, 0, 1, 1, new Color(90,94,96)));
 
         table.getTableHeader().addMouseListener(new MouseAdapter() {
             @Override
@@ -82,14 +84,14 @@ public class TableCheckBoxHeaderRenderer extends JCheckBox implements TableCellR
         return this;
     }
 
-//    @Override
-//    protected void paintComponent(Graphics g) {
-//        Graphics2D g2 = (Graphics2D) g.create();
-//        g2.setColor(Color.getColor("TableHeader.bottomSeperatorColor"));
-//        float size = UIScale.scale(1f);
-//        g2.fill(new Rectangle2D.Float(0, getHeight() - size, getWidth() - size, size));
-//        g2.dispose();
-//        super.paintComponent(g);
-//    }
+    @Override
+    protected void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setColor(javax.swing.UIManager.getColor("TableHeader.gridColor"));
+        float size = UIScale.scale(1f);
+        g2.fill(new Rectangle2D.Float(0, getHeight() - size, getWidth() - size, size));
+        g2.dispose();
+        super.paintComponent(g);
+    }
 
 }

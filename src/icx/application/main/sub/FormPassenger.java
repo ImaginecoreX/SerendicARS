@@ -51,6 +51,7 @@ public class FormPassenger extends javax.swing.JPanel {
         styleComponents();
         renderTable();
         testData();
+        loadPassengerTable();
         loadTotalPassengersToday();
         loadRecentFlightPassengers();
     }
@@ -68,11 +69,11 @@ public class FormPassenger extends javax.swing.JPanel {
         for (JPanel panel : panels) {
             panel.putClientProperty(FlatClientProperties.STYLE, ""
                     + "background:$SubPanel.background;"
-                    + "arc:20;");
+                    + "arc:25;");
         }
         recentFlightDetailPanel1.putClientProperty(FlatClientProperties.STYLE, ""
                 + "background:lighten($SubPanel.background, 10%);"
-                + "arc:20;");
+                + "arc:25;");
         /*
          *  Hiding the JTable and JScrollPane doesn't work well;
          *
@@ -104,6 +105,10 @@ public class FormPassenger extends javax.swing.JPanel {
             System.out.println(row);
         }));
 
+        passengerTable.getColumnModel().getColumn(6).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 6, "refresh", "icx/icon/svg/refresh.svg", () -> {
+            reset();
+        }));
+
         passengerTable.getColumnModel().getColumn(7).setHeaderRenderer(new TableButtonHeaderRenderer(passengerTable, 7, "Print Report", () -> {
             System.out.println("Print Report");
         }));
@@ -112,6 +117,21 @@ public class FormPassenger extends javax.swing.JPanel {
         passengerTable.getColumnModel().getColumn(7).setCellEditor(new TableSwitchButtonCellEditor((boolean selected) -> {
             System.out.println(selected);
         }));
+    }
+
+    private void reset() {
+        this.destination = "";
+        this.className = "";
+        this.flight = "";
+        JPanel[] containers = {destinationContainer, flightContainer, classContainer};
+        for (JPanel container : containers) {
+            container.setVisible(false);
+        }
+        JTextField[] fields = {destinationField, flightField, classField};
+        for (JTextField field : fields) {
+            field.setText("");
+        }
+        loadPassengerTable();
     }
 
     /*
@@ -127,7 +147,8 @@ public class FormPassenger extends javax.swing.JPanel {
 
         String query = "SELECT `code`, `city` FROM `airports`";
         if (!destination.isEmpty()) {
-            query += " WHERE `city` LIKE '%" + destination + "%' OR `code` LIKE '%" + destination + "%'";
+            query += " WHERE `city` LIKE '%" + destination + "%' "
+                    + "OR `code` LIKE '%" + destination + "%'";
         }
 
         try {
@@ -156,9 +177,14 @@ public class FormPassenger extends javax.swing.JPanel {
 
         String query = "SELECT * FROM `flight_schedule` "
                 + "INNER JOIN `flights` ON `flight_schedule`.`flight_id`=`flights`.`flight_id` "
-                + "INNER JOIN `airports` ON `flights`.`arrival_airport_id`=`airports`.`airport_id`";
+                + "INNER JOIN `airlines` ON `flights`.`airline_id` = `airlines`.`airline_id` "
+                + "INNER JOIN `airports` ON `flights`.`departure_airport_id`=`airports`.`airport_id`";
+        //+ "INNER JOIN `airports` ON `flights`.`arrival_airport_id`=`airports`.`airport_id`";
         if (!flight.isEmpty()) {
-            query += "  WHERE `flight_number` LIKE '%" + flight + "%'";
+            query += "  WHERE `flight_number` LIKE '%" + flight + "%' "
+                    + "OR `airlines`.`name` LIKE '%" + flight + "%' "
+                    + "OR `airports`.`name` LIKE '%" + flight + "%' "
+                    + "OR `airports`.`code` LIKE '%" + flight + "%'";
         }
 
         try {
@@ -167,8 +193,10 @@ public class FormPassenger extends javax.swing.JPanel {
             while (resultSet.next()) {
                 Vector rowData = new Vector();
 
-                rowData.add(resultSet.getString("city"));
-                rowData.add(resultSet.getString("code"));
+                rowData.add(resultSet.getString("flight_number"));
+                rowData.add(resultSet.getString("airports.name"));
+                rowData.add(resultSet.getString("airports.code"));
+                rowData.add(resultSet.getString("airlines.name"));
 
                 model.addRow(rowData);
             }
@@ -205,13 +233,63 @@ public class FormPassenger extends javax.swing.JPanel {
         }
     }
 
+    /* Passenger Table */
+    private String destination = "";
+    private String flight = "";
+    private String className = "";
+
+    //private void loadPassengerTable(String destination, String flight, String className) {
     private void loadPassengerTable() {
+        DefaultTableModel model = (DefaultTableModel) passengerTable.getModel();
+        model.setRowCount(0);
+
         try {
-            
-        } catch (Exception e) {
+            String query = "SELECT * FROM `ticket` "
+                    + "INNER JOIN `passenger` ON `ticket`.`p_id` = `passenger`.`p_id` "
+                    + "INNER JOIN `seat` ON `ticket`.`seat_s_id` = `seat`.`s_id` "
+                    + "INNER JOIN `class` ON `seat`.`c_id` = `class`.`c_id` "
+                    + "INNER JOIN `flight_schedule` ON `ticket`.`flight_schedule_id` = `flight_schedule`.`id` "
+                    + "INNER JOIN `flights` ON `flight_schedule`.`flight_id` = `flights`.`flight_id` "
+                    + "INNER JOIN `airports` ON `flights`.`arrival_airport_id` = `airports`.`airport_id`";
+
+            if (!destination.isEmpty() || !flight.isEmpty() || !className.isEmpty()) {
+                query += " WHERE";
+                if (!flight.isEmpty()) {
+                    query += " `flights`.`flight_number` = '" + flight + "'";
+                    if (!className.isEmpty()) {
+                        query += " AND `class_type`='" + className + "'";
+                    }
+                } else if (!destination.isEmpty()) {
+                    query += " `airports`.`code` = '" + destination + "'";
+                    if (!className.isEmpty()) {
+                        query += " AND `class_type`='" + className + "'";
+                    }
+                } else if (!className.isEmpty()) {
+                    query += " `class`.`class_type` = '" + className + "'";
+                }
+            }
+
+            ResultSet resultSet = MySQL.execute(query);
+
+            while (resultSet.next()) {
+                Vector rowData = new Vector();
+
+                rowData.add(false);
+                rowData.add(resultSet.getString("passenger.fname") + " " + resultSet.getString("passenger.lname"));
+                rowData.add(resultSet.getString("ticket.t_id"));
+                rowData.add(resultSet.getString("seat.s_id") + " : " + resultSet.getString("class_type"));
+                rowData.add(resultSet.getString("ticket.status"));
+                rowData.add(resultSet.getString("passenger.passport_id"));
+                rowData.add("");
+                rowData.add(true);
+
+                model.addRow(rowData);
+            }
+        } catch (SQLException e) {
+            DatabaseLogger.logger.log(Level.SEVERE, "SQLException in Search LoadPassengerTable: " + e.getMessage(), e.getMessage());
         }
     }
-    
+
     private void loadTotalPassengersToday() {
         String date = new DateFormatter().formatDate(new Date());
         dateText.setText(date);
@@ -228,7 +306,7 @@ public class FormPassenger extends javax.swing.JPanel {
                 otherDetails1.setText("");
             }
         } catch (SQLException e) {
-            DatabaseLogger.logger.log(Level.SEVERE, "SQLException in Search loadTotalPassengersToday: \n" + e.getMessage(), e.getMessage());
+            DatabaseLogger.logger.log(Level.SEVERE, "SQLException in Search loadTotalPassengersToday: " + e.getMessage(), e.getMessage());
         }
     }
 
@@ -384,6 +462,7 @@ public class FormPassenger extends javax.swing.JPanel {
         passengerTable = new javax.swing.JTable();
         moreButton = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -393,6 +472,7 @@ public class FormPassenger extends javax.swing.JPanel {
 
         setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 4, 4));
 
+        recentFlightsScroll.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         recentFlightsScroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         recentFlightsScroll.setPreferredSize(new java.awt.Dimension(820, 219));
 
@@ -690,6 +770,7 @@ public class FormPassenger extends javax.swing.JPanel {
         );
 
         destinationPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        destinationPanel.setMaximumSize(new java.awt.Dimension(32767, 250));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel3.setText("Select Destination");
@@ -711,10 +792,16 @@ public class FormPassenger extends javax.swing.JPanel {
             }
         });
         destinationTable.setShowHorizontalLines(true);
+        destinationTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                destinationTableMouseClicked(evt);
+            }
+        });
         destinationScroll.setViewportView(destinationTable);
         if (destinationTable.getColumnModel().getColumnCount() > 0) {
             destinationTable.getColumnModel().getColumn(0).setResizable(false);
             destinationTable.getColumnModel().getColumn(1).setResizable(false);
+            destinationTable.getColumnModel().getColumn(1).setPreferredWidth(30);
         }
 
         javax.swing.GroupLayout destinationContainerLayout = new javax.swing.GroupLayout(destinationContainer);
@@ -802,6 +889,7 @@ public class FormPassenger extends javax.swing.JPanel {
         );
 
         flightPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        flightPanel.setMaximumSize(new java.awt.Dimension(32767, 250));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel4.setText("Select Flight");
@@ -811,11 +899,11 @@ public class FormPassenger extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Flight", "From", "To"
+                "Flight", "From", "Code", "Airline"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -823,11 +911,18 @@ public class FormPassenger extends javax.swing.JPanel {
             }
         });
         flightTable.setShowHorizontalLines(true);
+        flightTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                flightTableMouseClicked(evt);
+            }
+        });
         flightScroll.setViewportView(flightTable);
         if (flightTable.getColumnModel().getColumnCount() > 0) {
             flightTable.getColumnModel().getColumn(0).setResizable(false);
             flightTable.getColumnModel().getColumn(1).setResizable(false);
             flightTable.getColumnModel().getColumn(2).setResizable(false);
+            flightTable.getColumnModel().getColumn(2).setPreferredWidth(15);
+            flightTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout flightContainerLayout = new javax.swing.GroupLayout(flightContainer);
@@ -915,6 +1010,7 @@ public class FormPassenger extends javax.swing.JPanel {
         );
 
         classPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        classPanel.setMaximumSize(new java.awt.Dimension(32767, 250));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel5.setText("Select Class");
@@ -936,6 +1032,11 @@ public class FormPassenger extends javax.swing.JPanel {
             }
         });
         classTable.setShowHorizontalLines(true);
+        classTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                classTableMouseClicked(evt);
+            }
+        });
         classScroll.setViewportView(classTable);
         if (classTable.getColumnModel().getColumnCount() > 0) {
             classTable.getColumnModel().getColumn(0).setResizable(false);
@@ -958,11 +1059,6 @@ public class FormPassenger extends javax.swing.JPanel {
                 .addGap(0, 0, 0))
         );
 
-        classField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                classFieldActionPerformed(evt);
-            }
-        });
         classField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 classFieldKeyReleased(evt);
@@ -1052,7 +1148,7 @@ public class FormPassenger extends javax.swing.JPanel {
 
             },
             new String [] {
-                "", "Onboard Passengers", "Ticket No", "Seat No/CI", "Status", "Passport No", "", "Print Report"
+                "", "Passengers", "Ticket No", "Seat No/CI", "Status", "Passport No", "", "Print Report"
             }
         ) {
             Class[] types = new Class [] {
@@ -1086,6 +1182,9 @@ public class FormPassenger extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Onboard Passengers");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -1106,7 +1205,10 @@ public class FormPassenger extends javax.swing.JPanel {
                             .addComponent(recentFlightsScroll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(moreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator5))
+                    .addComponent(jSeparator5)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -1114,7 +1216,7 @@ public class FormPassenger extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(recentFlightsScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recentFlightsScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
                     .addComponent(moreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1128,8 +1230,10 @@ public class FormPassenger extends javax.swing.JPanel {
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchPanelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(passengerScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passengerScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                 .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -1147,6 +1251,8 @@ public class FormPassenger extends javax.swing.JPanel {
         } else {
             loadDestinations(destination);
         }
+        this.destination = "";
+        loadPassengerTable();
     }//GEN-LAST:event_destinationFieldKeyReleased
 
     private void flightFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_flightFieldKeyReleased
@@ -1157,6 +1263,8 @@ public class FormPassenger extends javax.swing.JPanel {
         } else {
             loadFlights(flight);
         }
+        this.flight = "";
+        loadPassengerTable();
     }//GEN-LAST:event_flightFieldKeyReleased
 
     private void classFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_classFieldKeyReleased
@@ -1167,6 +1275,8 @@ public class FormPassenger extends javax.swing.JPanel {
         } else {
             loadClasses(className);
         }
+        this.className = "";
+        loadPassengerTable();
     }//GEN-LAST:event_classFieldKeyReleased
 
     private void addPassengerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPassengerButtonActionPerformed
@@ -1179,24 +1289,62 @@ public class FormPassenger extends javax.swing.JPanel {
         passengerSeviceIMPL.openManagePassenger(this);
     }//GEN-LAST:event_updatePassengerButtonActionPerformed
 
-    private void classFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_classFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_classFieldActionPerformed
-
     private void allDestinationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allDestinationsButtonActionPerformed
         // View All Destination
+        this.destination = "";
+        loadPassengerTable();
         loadDestinations("");
     }//GEN-LAST:event_allDestinationsButtonActionPerformed
 
     private void allFlightsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allFlightsButtonActionPerformed
         // View All Flights
+        this.flight = "";
+        loadPassengerTable();
         loadFlights("");
     }//GEN-LAST:event_allFlightsButtonActionPerformed
 
     private void allClassesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allClassesButtonActionPerformed
         // View All Classes
+        this.className = "";
+        loadPassengerTable();
         loadClasses("");
     }//GEN-LAST:event_allClassesButtonActionPerformed
+
+    private void destinationTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_destinationTableMouseClicked
+        // Select Destination
+        if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
+            int selectedRow = destinationTable.getSelectedRow();
+
+            if (selectedRow != -1) {
+                this.destination = String.valueOf(destinationTable.getValueAt(selectedRow, 1));
+                loadPassengerTable();
+            }
+        }
+    }//GEN-LAST:event_destinationTableMouseClicked
+
+    private void flightTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flightTableMouseClicked
+        // Select Flight
+        if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
+            int selectedRow = flightTable.getSelectedRow();
+
+            if (selectedRow != -1) {
+                this.flight = String.valueOf(flightTable.getValueAt(selectedRow, 0));
+                loadPassengerTable();
+            }
+        }
+    }//GEN-LAST:event_flightTableMouseClicked
+
+    private void classTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_classTableMouseClicked
+        // Select Class
+        if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
+            int selectedRow = classTable.getSelectedRow();
+
+            if (selectedRow != -1) {
+                this.className = String.valueOf(classTable.getValueAt(selectedRow, 0));
+                loadPassengerTable();
+            }
+        }
+    }//GEN-LAST:event_classTableMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel RecentFlightsContainer;
@@ -1240,6 +1388,7 @@ public class FormPassenger extends javax.swing.JPanel {
     private javax.swing.JScrollPane flightScroll;
     private javax.swing.JTable flightTable;
     private javax.swing.JPanel headContainer;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

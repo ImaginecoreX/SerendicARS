@@ -1,0 +1,8 @@
+May 28, 2024 12:15:30 AM icx.application.main.sub.FormPassenger loadPassengerTable
+SEVERE: SQLException in Search LoadPassengerTable: Unknown column 'airport.code' in 'where clause'
+May 28, 2024 12:15:32 AM icx.application.main.sub.FormPassenger loadPassengerTable
+SEVERE: SQLException in Search LoadPassengerTable: Unknown column 'airport.code' in 'where clause'
+May 28, 2024 12:15:39 AM icx.application.main.sub.FormPassenger loadPassengerTable
+SEVERE: SQLException in Search LoadPassengerTable: Unknown column 'airport.code' in 'where clause'
+May 28, 2024 12:15:40 AM icx.application.main.sub.FormPassenger loadPassengerTable
+SEVERE: SQLException in Search LoadPassengerTable: Unknown column 'airport.code' in 'where clause'

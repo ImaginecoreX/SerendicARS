@@ -465,6 +465,7 @@ public class ManagePassenger extends javax.swing.JDialog {
             passengerDTO.setStatus(status);
 
             passengerSeviceIMPL.updatePassenger(passengerDTO, this);
+            reset();
             loadPassengers(searchField.getText());
         }
 
