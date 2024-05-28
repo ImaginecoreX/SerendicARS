@@ -1,5 +1,6 @@
 package icx.service;
 
+import icx.application.main.sub.passenger.ManagePassenger;
 import icx.model.Passenger;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -16,7 +17,7 @@ public interface PassengerSevice {
     
     public void openAddPassenger(JPanel parent);
     
-    public void openManagePassenger(JPanel parent);
+    public ManagePassenger openManagePassenger(JPanel parent);
     
     public boolean loadPassengers(String text, JTable passengerTable);
         

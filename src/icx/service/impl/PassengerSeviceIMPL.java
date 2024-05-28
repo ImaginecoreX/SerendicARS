@@ -42,9 +42,10 @@ public class PassengerSeviceIMPL implements PassengerSevice {
     }
 
     @Override
-    public void openManagePassenger(JPanel parent) {
+    public ManagePassenger openManagePassenger(JPanel parent) {
         ManagePassenger managePassenger = new ManagePassenger(parent);
         managePassenger.setVisible(true);
+        return managePassenger;
     }
 
     @Override

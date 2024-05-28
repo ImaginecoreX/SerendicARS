@@ -29,7 +29,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" pref="540" max="32767" attributes="0"/>
+              <Component id="jPanel1" pref="598" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -59,7 +59,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="fieldPanel" alignment="2" max="32767" attributes="0"/>
-                      <Component id="Title" alignment="2" pref="528" max="32767" attributes="0"/>
+                      <Component id="Title" alignment="2" pref="586" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -69,10 +69,10 @@
                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel2" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jPanel4" max="32767" attributes="0"/>
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -132,7 +132,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="passportField" max="32767" attributes="0"/>
                           <Component id="fnameField" max="32767" attributes="0"/>
-                          <Component id="lnameField" pref="399" max="32767" attributes="0"/>
+                          <Component id="lnameField" pref="457" max="32767" attributes="0"/>
                           <Component id="statusComboBox" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -254,8 +254,8 @@
                           <Component id="flightNoField" max="32767" attributes="0"/>
                           <Component id="ticketNoField" alignment="0" max="32767" attributes="0"/>
                           <Component id="ticketStatusField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="departureTImeField" alignment="0" pref="246" max="32767" attributes="0"/>
-                          <Component id="departureField" alignment="0" pref="246" max="32767" attributes="0"/>
+                          <Component id="departureTImeField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="departureField" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -264,7 +264,7 @@
                                   <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -360,7 +360,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="seatNoField" max="32767" attributes="0"/>
+                          <Component id="seatNoField" pref="282" max="32767" attributes="0"/>
                           <Component id="classField" alignment="0" max="32767" attributes="0"/>
                           <Component id="dateField" alignment="0" max="32767" attributes="0"/>
                           <Component id="arrivalTimeField" alignment="0" max="32767" attributes="0"/>

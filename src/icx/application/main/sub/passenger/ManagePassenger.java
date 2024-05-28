@@ -2,6 +2,7 @@ package icx.application.main.sub.passenger;
 
 import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.FlatDarkLaf;
+import icx.application.main.sub.gui.BookTicket;
 import icx.model.Passenger;
 import icx.service.impl.PassengerSeviceIMPL;
 import icx.table.TableContentCenterCellRenderer;
@@ -10,7 +11,6 @@ import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -21,11 +21,12 @@ public class ManagePassenger extends javax.swing.JDialog {
     private JPanel parent;
     private PassengerSeviceIMPL passengerSeviceIMPL = new PassengerSeviceIMPL();
     private Passenger passenger;
-    // private TicketManagement ticketManagement; // use this to parse data from this model to ticketManagement on selecting passenger to issue a ticket // use setTicketManagement(ticketManagement); on parent panel
 
-    // public void setTicketManagement(TicketManagement ticketManagement) {
-    //     this.ticketManagement = ticketManagement;
-    // }
+     private BookTicket bookTicket; // use this to parse data from this model to ticketManagement on selecting passenger to issue a ticket // use setTicketManagement(ticketManagement); on parent panel
+
+     public void setBookTicket(BookTicket bookTicket) {
+         this.bookTicket = bookTicket;
+     }
     /**
      * Creates new form AddPassenger
      */
@@ -425,12 +426,14 @@ public class ManagePassenger extends javax.swing.JDialog {
                 // Select to Update
                 fillPassengerFields();
 
-            } else if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
+            // } else if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
+            } else if (evt.getClickCount() == 2) {
                 // Select & Parse to Parent
 
-                // if (this.ticketManagement != null) {
-                //     this.ticketManagement.setPassenger(passengerDTO); // Create an instance variable as Passenger passenger; on Parent Panel (ex: TicketManagement). And create a setter for it. 
-                // }
+                 if (this.bookTicket != null) {
+                     this.bookTicket.setPassenger(new Passenger(id, fname, lname, passport, status)); // Create an instance variable as Passenger passenger; on Parent Panel (ex: TicketManagement). And create a setter for it. 
+                     this.dispose();
+                 }
             }
         }
     }//GEN-LAST:event_passengerTableMouseClicked
