@@ -26,7 +26,7 @@ public class Report {
         printLogger = Logger.getLogger("icx.util.Print");
 
         try {
-            fileHandler = new FileHandler("icx.util.Print.txt", true);
+            fileHandler = new FileHandler("C:\\Users\\94701\\Documents\\loggers\\icx.util.Print.txt", true);
         } catch (Exception e) {
         }
 

@@ -23,7 +23,7 @@ public class UserSearch extends javax.swing.JPanel {
         this.userServiceIMPL = userServiceIMPL;
         userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` ORDER BY `u_id` ASC");
         jTextField3.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Search Mobile");
-        jTextField4.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Email Mobile");
+        jTextField4.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Search Email");
     }
 
     /**
@@ -83,7 +83,7 @@ public class UserSearch extends javax.swing.JPanel {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -99,7 +99,7 @@ public class UserSearch extends javax.swing.JPanel {
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE))
         );
 
         add(jPanel8);
@@ -112,11 +112,23 @@ public class UserSearch extends javax.swing.JPanel {
 
     private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
         // TODO add your handling code here:
+        if (jTextField3.getText().isEmpty()) {
+            jTextField4.setEnabled(true);
+        } else {
+            jTextField4.setEnabled(false);
+        }
+     
         userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` WHERE `mobile`LIKE'" + jTextField3.getText() + "%' ");
     }//GEN-LAST:event_jTextField3KeyReleased
 
     private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
         // TODO add your handling code here:
+        if (jTextField4.getText().isEmpty()) {
+            jTextField3.setEnabled(true);
+        } else {
+            jTextField3.setEnabled(false);
+        }
+
         userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` WHERE `email`LIKE'" + jTextField4.getText() + "%' ");
     }//GEN-LAST:event_jTextField4KeyReleased
 
