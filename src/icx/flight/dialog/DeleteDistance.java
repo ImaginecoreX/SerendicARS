@@ -4,7 +4,18 @@
  */
 package icx.flight.dialog;
 
+import icx.application.main.sub.FormDistanceCalculation;
+import icx.model.DistanceDTO;
+import icx.service.AirportService;
+import icx.service.impl.AirportDAO;
+import icx.service.impl.DistanceDAO;
+import icx.util.LoggerUtil;
+import icx.util.TimeFactory;
+import java.sql.SQLException;
+import java.sql.Time;
+import java.util.Date;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,16 +24,58 @@ import javax.swing.JFrame;
 public class DeleteDistance extends javax.swing.JDialog {
 
         private JFrame app;
+            private static AirportDAO airportDAO;
+    private static DistanceDAO distanceDAO;
+    private FormDistanceCalculation distancePanel;
 //    private String code;
     /**
      * Creates new form AddDistance
      */
     public DeleteDistance(JFrame parent, boolean modal, String action) {
+    super(parent, action, modal);
+        initComponents();
+        airportDAO = new AirportDAO();
+        distanceDAO = new DistanceDAO();
+        this.app = parent;
+        this.distancePanel = this.distancePanel;
+        init();
+    }
+    
+    
+    public DeleteDistance(JFrame parent, boolean modal, String action, int distanceId, String departureAirport, String arrivalAirport, double distance, Date date, Time time) {
         super(parent, action, modal);
         initComponents();
+        airportDAO = new AirportDAO();
+        distanceDAO = new DistanceDAO();
         this.app = parent;
+        this.distancePanel = this.distancePanel;
+        init();
+        air1.setSelectedItem(departureAirport);
+        air2.setSelectedItem(arrivalAirport);
+        this.distanceField.setText(String.valueOf(distance));
     }
 
+    public void init() {
+        /**
+         * LOAD FROM AIRPORTS
+         *
+         */
+        try {
+            airportDAO.loadAllAirportNames(air1, AirportService.DESTINATION.FROM);
+        } catch (SQLException e) {
+            LoggerUtil.logWarning(e.getMessage());
+        }
+
+        /**
+         * LOAD TO AIRPORTS
+         *
+         */
+        try {
+            airportDAO.loadAllAirportNames(air2, AirportService.DESTINATION.TO);
+        } catch (Exception e) {
+            LoggerUtil.logWarning(e.getMessage());
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,16 +88,16 @@ public class DeleteDistance extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        countryComboBox = new javax.swing.JComboBox<>();
+        air1 = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        airlineStatusComboBox = new javax.swing.JComboBox<>();
+        air2 = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        distanceField = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         closeRegister = new javax.swing.JButton();
-        processRegister = new javax.swing.JButton();
+        processDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(502, 420));
@@ -59,20 +112,20 @@ public class DeleteDistance extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel1.setText("Delete Distance");
 
-        countryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        countryComboBox.addItemListener(new java.awt.event.ItemListener() {
+        air1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        air1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                countryComboBoxItemStateChanged(evt);
+                air1ItemStateChanged(evt);
             }
         });
 
         jLabel10.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel10.setText("Distance");
 
-        airlineStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        airlineStatusComboBox.addItemListener(new java.awt.event.ItemListener() {
+        air2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        air2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                airlineStatusComboBoxItemStateChanged(evt);
+                air2ItemStateChanged(evt);
             }
         });
 
@@ -82,8 +135,8 @@ public class DeleteDistance extends javax.swing.JDialog {
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel12.setText("Departure Airport");
 
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        distanceField.setEditable(false);
+        distanceField.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
 
         closeRegister.setText("Cancel");
         closeRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -92,10 +145,10 @@ public class DeleteDistance extends javax.swing.JDialog {
             }
         });
 
-        processRegister.setText("Delete");
-        processRegister.addActionListener(new java.awt.event.ActionListener() {
+        processDelete.setText("Delete");
+        processDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processRegisterActionPerformed(evt);
+                processDeleteActionPerformed(evt);
             }
         });
 
@@ -114,23 +167,23 @@ public class DeleteDistance extends javax.swing.JDialog {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(distanceField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
-                                    .addComponent(countryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(air1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel12))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
-                                    .addComponent(airlineStatusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(air2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(24, 24, 24))))
             .addComponent(jSeparator2)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(closeRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(processRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(processDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
         jPanel1Layout.setVerticalGroup(
@@ -147,20 +200,20 @@ public class DeleteDistance extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(airlineStatusComboBox))
+                        .addComponent(air2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(countryComboBox)))
+                        .addComponent(air1)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(distanceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(processRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(processDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(closeRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
@@ -180,23 +233,50 @@ public class DeleteDistance extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void countryComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_countryComboBoxItemStateChanged
+    private void air1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_air1ItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_countryComboBoxItemStateChanged
+    }//GEN-LAST:event_air1ItemStateChanged
 
-    private void airlineStatusComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_airlineStatusComboBoxItemStateChanged
+    private void air2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_air2ItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_airlineStatusComboBoxItemStateChanged
+    }//GEN-LAST:event_air2ItemStateChanged
 
     private void closeRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeRegisterActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_closeRegisterActionPerformed
 
-    private void processRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processRegisterActionPerformed
+    private void processDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processDeleteActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_processRegisterActionPerformed
+        if (air1.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Please Select Departure Airport", "Warning Message", JOptionPane.WARNING_MESSAGE);
+
+        } else if (air2.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Please Select Arrival Airport", "Warning Message", JOptionPane.WARNING_MESSAGE);
+
+        } else if (distanceField == null || distanceField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please Enter Distance", "Warning Message", JOptionPane.WARNING_MESSAGE);
+        } else {
+            DistanceDTO dto = new DistanceDTO();
+            dto.setAirport1Id(air1.getSelectedIndex());
+            dto.setAirport2Id(air2.getSelectedIndex());
+            dto.setDistance(Double.valueOf(distanceField.getText()));
+            dto.setCalculationDate(new TimeFactory().getDateTime());
+
+            try {
+                DistanceDAO dao = new DistanceDAO();
+                dao.deleteDistance(dto.getId());
+                JOptionPane.showMessageDialog(this, "Distance Deleted successfully.");
+                dispose();
+                LoggerUtil.logInfo("THE RECORDE:: " + dto.getAirport1Id() + " TO " + dto.getAirport2Id() + " WAS SUCCESSFULLY DELETED AT: " + dto.getCalculationDate() + " TO " + dto.getDistance() + "|| REFERENCE::" + dto.getId());
+                this.dispose();
+
+            } catch (Exception e) {
+                LoggerUtil.logSevere(e.getMessage());
+            }
+
+        }
+    }//GEN-LAST:event_processDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,9 +322,10 @@ public class DeleteDistance extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> airlineStatusComboBox;
+    private javax.swing.JComboBox<String> air1;
+    private javax.swing.JComboBox<String> air2;
     private javax.swing.JButton closeRegister;
-    private javax.swing.JComboBox<String> countryComboBox;
+    private javax.swing.JTextField distanceField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -253,7 +334,6 @@ public class DeleteDistance extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton processRegister;
+    private javax.swing.JButton processDelete;
     // End of variables declaration//GEN-END:variables
 }

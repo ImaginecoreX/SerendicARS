@@ -5,7 +5,7 @@ import icx.application.Application;
 import icx.flight.airline.AirlineCard;
 import icx.flight.dialog.RegisterAirline;
 import icx.flight.dialog.UpdateAirline;
-import icx.model.AirlineCardWrapper;
+import icx.flight.airline.AirlineCardWrapper;
 import icx.model.AirlineDTO;
 import icx.service.impl.AirlineDAO;
 import java.awt.FlowLayout;

@@ -24,12 +24,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -43,6 +46,8 @@ public class FormDistanceCalculation extends javax.swing.JPanel {
 
     public FormDistanceCalculation() {
         initComponents();
+        updateDistanceAction.setEnabled(false);
+        deleteDistanceAction.setEnabled(false);
         airportDAO = new AirportDAO();
         distanceDAO = new DistanceDAO();
         init();
@@ -53,12 +58,10 @@ public class FormDistanceCalculation extends javax.swing.JPanel {
         // Add padding
         distanceTable.setIntercellSpacing(new Dimension(10, 10));
         tableScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        
+
         mapImage.setHorizontalAlignment(JLabel.CENTER);
         mapImage.setIcon(new FlatSVGIcon("icx/resources/flights/svg/map.svg", mapPanel.getWidth(), mapPanel.getHeight()));
-        
-       
-        
+
     }
 
     public void init() {
@@ -95,20 +98,20 @@ public class FormDistanceCalculation extends javax.swing.JPanel {
     }
 
     private void openAddDistanceDialog() {
-        AddDistance dialog = new AddDistance((JFrame) Application.app, true, "Add Distance");
+        AddDistance dialog = new AddDistance((JFrame) Application.app, true, "Add Distance", this);
         dialog.setVisible(true);
     }
 
-     private void openUpdateDistanceDialog() {
-         UpdateDistance dialog = new UpdateDistance((JFrame) Application.app, true, "Add Distance");
+    private void openUpdateDistanceDialog() {
+        UpdateDistance dialog = new UpdateDistance((JFrame) Application.app, true, "Update Distance");
         dialog.setVisible(true);
     }
-     
-          private void openDeleteDistanceDialog() {
-              DeleteDistance dialog = new DeleteDistance((JFrame) Application.app, true, "Add Distance");
+
+    private void openDeleteDistanceDialog() {
+        DeleteDistance dialog = new DeleteDistance((JFrame) Application.app, true, "Delete Distance");
         dialog.setVisible(true);
     }
-     
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -329,6 +332,11 @@ public class FormDistanceCalculation extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        distanceTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                distanceTableMouseClicked(evt);
+            }
+        });
         tableScrollPane.setViewportView(distanceTable);
 
         tableDataPanel.add(tableScrollPane);
@@ -361,13 +369,69 @@ public class FormDistanceCalculation extends javax.swing.JPanel {
 
     private void updateDistanceActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateDistanceActionActionPerformed
         // TODO add your handling code here:
-        openUpdateDistanceDialog();
+        // Open the update dialog with the selected row data
+        int selectedRow = distanceTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) distanceTable.getModel();
+
+        int distanceId = (int) model.getValueAt(selectedRow, 0);
+        String departureAirport = (String) model.getValueAt(selectedRow, 1);
+        String arrivalAirport = (String) model.getValueAt(selectedRow, 2);
+        double distance = (double) model.getValueAt(selectedRow, 3);
+        Date date = (Date) model.getValueAt(selectedRow, 4);
+        Time time = (Time) model.getValueAt(selectedRow, 5);
+        
+        UpdateDistance updateDialog = new UpdateDistance((JFrame) Application.app, true, "Update Distance", distanceId, departureAirport, arrivalAirport, distance, date, time);
+        updateDialog.setVisible(true);
     }//GEN-LAST:event_updateDistanceActionActionPerformed
 
     private void deleteDistanceActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteDistanceActionActionPerformed
         // TODO add your handling code here:
-        openDeleteDistanceDialog();
+        // Open the update dialog with the selected row data
+            // Open the update dialog with the selected row data
+        int selectedRow = distanceTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) distanceTable.getModel();
+
+        int distanceId = (int) model.getValueAt(selectedRow, 0);
+        String departureAirport = (String) model.getValueAt(selectedRow, 1);
+        String arrivalAirport = (String) model.getValueAt(selectedRow, 2);
+        double distance = (double) model.getValueAt(selectedRow, 3);
+        Date date = (Date) model.getValueAt(selectedRow, 4);
+        Time time = (Time) model.getValueAt(selectedRow, 5);
+        
+        DeleteDistance deleteDistance = new DeleteDistance((JFrame) Application.app, true, "Update Distance", distanceId, departureAirport, arrivalAirport, distance, date, time);
+        deleteDistance.setVisible(true);
     }//GEN-LAST:event_deleteDistanceActionActionPerformed
+
+    private void distanceTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_distanceTableMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 1) {
+            int selectedRow = distanceTable.getSelectedRow();
+
+            if (selectedRow != -1) {
+                deleteDistanceAction.setEnabled(true);
+                updateDistanceAction.setEnabled(true);
+            }
+        } else if (evt.getClickCount() == 2) {
+            int selectedRow = distanceTable.getSelectedRow();
+
+            if (selectedRow != -1) {
+                // Assuming the model's columns are:
+                // 0 - distance_id, 1 - departure_airport, 2 - arrival_airport, 3 - distance, 4 - date, 5 - time
+                DefaultTableModel model = (DefaultTableModel) distanceTable.getModel();
+
+                int distanceId = (int) model.getValueAt(selectedRow, 0);
+                String departureAirport = (String) model.getValueAt(selectedRow, 1);
+                String arrivalAirport = (String) model.getValueAt(selectedRow, 2);
+                double distance = (double) model.getValueAt(selectedRow, 3);
+                Date date = (Date) model.getValueAt(selectedRow, 4);
+                Time time = (Time) model.getValueAt(selectedRow, 5);
+
+                // Open the update dialog with the selected row data
+                UpdateDistance updateDialog = new UpdateDistance((JFrame) Application.app, true, "Update Distance", distanceId, departureAirport, arrivalAirport, distance, date, time);
+                updateDialog.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_distanceTableMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DistanceContainerPanel;

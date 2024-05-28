@@ -114,3 +114,182 @@
   <message>SQL Error: No distance found between the specified airports.</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T04:42:24.475494Z</date>
+  <millis>1716871344475</millis>
+  <nanos>494000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>SEVERE</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logSevere</method>
+  <thread>33</thread>
+  <message>Table 'ars.aircrafttype' doesn't exist</message>
+</record>
+<record>
+  <date>2024-05-28T04:42:28.832893Z</date>
+  <millis>1716871348832</millis>
+  <nanos>893000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.util</logger>
+  <level>SEVERE</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logSevere</method>
+  <thread>33</thread>
+  <message>Table 'ars.aircrafttype' doesn't exist</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T05:53:14.546041Z</date>
+  <millis>1716875594546</millis>
+  <nanos>41000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>SEVERE</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logSevere</method>
+  <thread>34</thread>
+  <message>Unknown column 'id' in 'where clause'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T05:58:29.270491Z</date>
+  <millis>1716875909270</millis>
+  <nanos>491000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>The recorde2 to 4 was successfuly updated at: 2024-05-28 11:28:29.245613 to 590.4|| REFERENCE::0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:03:54.645900Z</date>
+  <millis>1716876234645</millis>
+  <nanos>900000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>THE RECORDE:: 2 TO 1 WAS SUCCESSFULLY UPDATED AT: 2024-05-28 11:33:54.62495 TO 3450.9|| REFERENCE::0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:06:13.349723Z</date>
+  <millis>1716876373349</millis>
+  <nanos>723000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>THE RECORDE:: 2 TO 3 WAS SUCCESSFULLY UPDATED AT: 2024-05-28 11:36:13.334097 TO 4562.27|| REFERENCE::0</message>
+</record>
+<record>
+  <date>2024-05-28T06:16:07.908700Z</date>
+  <millis>1716876967908</millis>
+  <nanos>700000</nanos>
+  <sequence>2</sequence>
+  <logger>icx.util.FileSelector</logger>
+  <level>INFO</level>
+  <class>icx.util.FileSelector</class>
+  <method>handleImage</method>
+  <thread>33</thread>
+  <message>File selection cancelled by user.</message>
+</record>
+<record>
+  <date>2024-05-28T06:18:50.892029Z</date>
+  <millis>1716877130892</millis>
+  <nanos>29000</nanos>
+  <sequence>3</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>THE RECORDE:: 2 TO 4 WAS SUCCESSFULLY UPDATED AT: 2024-05-28 11:48:50.876082 TO 589.6|| REFERENCE::0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:19:55.882326Z</date>
+  <millis>1716877195882</millis>
+  <nanos>326000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>THE RECORDE:: 2 TO 4 WAS SUCCESSFULLY UPDATED AT: 2024-05-28 11:49:55.866251 TO 589.6|| REFERENCE::0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:51:31.977931Z</date>
+  <millis>1716879091977</millis>
+  <nanos>931000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>THE RECORDE:: 2 TO 1 WAS SUCCESSFULLY DELETED AT: 2024-05-28 12:21:30.235646 TO 3460.0|| REFERENCE::0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:53:04.460755Z</date>
+  <millis>1716879184460</millis>
+  <nanos>755000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>THE RECORDE:: 2 TO 1 WAS SUCCESSFULLY DELETED AT: 2024-05-28 12:23:00.262927 TO 3460.0|| REFERENCE::0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:54:03.600095Z</date>
+  <millis>1716879243600</millis>
+  <nanos>95000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util</logger>
+  <level>INFO</level>
+  <class>icx.util.LoggerUtil</class>
+  <method>logInfo</method>
+  <thread>33</thread>
+  <message>THE RECORDE:: 2 TO 1 WAS SUCCESSFULLY DELETED AT: 2024-05-28 12:24:02.316125 TO 3460.0|| REFERENCE::0</message>
+</record>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:51:30.256932Z</date>
+  <millis>1716879090256</millis>
+  <nanos>932000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.DistanceDAO</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.DistanceDAO</class>
+  <method>deleteDistance</method>
+  <thread>33</thread>
+  <message>Error deleteing Distance: Unknown column 'id' in 'where clause'</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T06:53:00.285075Z</date>
+  <millis>1716879180285</millis>
+  <nanos>75000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.DistanceDAO</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.DistanceDAO</class>
+  <method>deleteDistance</method>
+  <thread>33</thread>
+  <message>Error deleteing Distance: Unknown column 'id' in 'where clause'</message>
+</record>
+</log>

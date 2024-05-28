@@ -31,4 +31,8 @@ public interface AircraftTypeService {
     
     public void tableDataLoad(JTable table) throws SQLException;
 
+    
+    public HashMap<String, String> getTypes(JComboBox comboBox);
+
+    /** TEST **/
 }

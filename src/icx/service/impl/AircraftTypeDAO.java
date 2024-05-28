@@ -126,7 +126,7 @@ public class AircraftTypeDAO implements AircraftTypeService {
 
     @Override
     public HashMap<String, String> getSeatCapacity(JComboBox comboBox) {
-        try (ResultSet rs = MySQL.execute("SELECT `a`.* FROM `Aircraft_Types` `a` INNER JOIN (SELECT MIN(`aircraft_type_id`) AS `id` FROM `Aircraft_Types` GROUP BY `seat_capacity`) `b` ON `a`.`aircraft_type_id` = `b`.`id` ORDER BY `seat_capacity` ASC")){
+        try (ResultSet rs = MySQL.execute("SELECT `a`.* FROM `Aircraft_Types` `a` INNER JOIN (SELECT MIN(`aircraft_type_id`) AS `id` FROM `Aircraft_Types` GROUP BY `seat_capacity`) `b` ON `a`.`aircraft_type_id` = `b`.`id` ORDER BY `seat_capacity` ASC")) {
             if (rs.next()) {
                 Vector<String> vector = new Vector<>();
                 HashMap<String, String> seatMap = new HashMap<>();
@@ -153,7 +153,7 @@ public class AircraftTypeDAO implements AircraftTypeService {
 
     @Override
     public HashMap<String, String> getStatus(JComboBox comboBox) {
-        try (ResultSet rs = MySQL.execute("SELECT `a`.* FROM `Aircraft_Types` `a` INNER JOIN (SELECT MIN(`aircraft_type_id`) AS `id` FROM `Aircraft_Types` GROUP BY `status`) `b` ON `a`.`aircraft_type_id` = `b`.`id` ORDER BY `status` ASC")){
+        try (ResultSet rs = MySQL.execute("SELECT `a`.* FROM `Aircraft_Types` `a` INNER JOIN (SELECT MIN(`aircraft_type_id`) AS `id` FROM `Aircraft_Types` GROUP BY `status`) `b` ON `a`.`aircraft_type_id` = `b`.`id` ORDER BY `status` ASC")) {
             if (rs.next()) {
                 Vector<String> vector = new Vector<>();
                 HashMap<String, String> statusMap = new HashMap<>();
@@ -180,7 +180,7 @@ public class AircraftTypeDAO implements AircraftTypeService {
 
     @Override
     public void tableDataLoad(JTable table) throws SQLException {
-         String query = "SELECT * FROM ars.Aircraft_Types";
+        String query = "SELECT * FROM ars.Aircraft_Types";
 
         try (ResultSet rs = MySQL.execute(query)) {
 
@@ -205,6 +205,33 @@ public class AircraftTypeDAO implements AircraftTypeService {
             LoggerUtil.logWarning("SQL Error: " + e.getMessage());
             throw e;
         }
+    }
+
+    @Override
+    public HashMap<String, String> getTypes(JComboBox comboBox) {
+        try {
+            ResultSet rs = MySQL.execute("SELECT `a`.* FROM `Aircraft_Types` `a` INNER JOIN (SELECT MIN(`aircraft_type_id`) AS `id` FROM `Aircraft_Types` GROUP BY `name`) `b` ON `a`.`aircraft_type_id` = `b`.`id` ORDER BY `name` ASC");
+            if (rs.next()) {
+                Vector<String> vector = new Vector<>();
+                HashMap<String, String> typeMap = new HashMap<>();
+                vector.add("Select Aircraft Type");
+                do {
+                    String status = rs.getString("name");
+                    vector.add(status);
+                    typeMap.put(status, rs.getString("aircraft_type_id"));
+                } while (rs.next());
+
+                DefaultComboBoxModel model = (DefaultComboBoxModel) comboBox.getModel();
+                model.removeAllElements();
+                model.addAll(vector);
+
+                comboBox.setSelectedIndex(0);
+                return typeMap;
+            }
+        } catch (Exception e) {
+            aircraftTypeServiceLogger.warning("Error loading Aircraft Names: " + e.getMessage());
+        }
+        return null;
     }
 
 }

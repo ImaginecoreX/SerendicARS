@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +24,20 @@ import javax.swing.table.DefaultTableModel;
  * @author sandaruwan
  */
 public class DistanceDAO implements DistanceService {
+    
+    private static final Logger DistanceDAOLogger = Logger.getLogger("icx.service.impl.DistanceDAO");
+
+    private static FileHandler fileHandler;
+
+    static {
+        try {
+            fileHandler = new FileHandler("icx.service.impl.DistanceDAO.txt", true);
+        } catch (Exception e) {
+             DistanceDAOLogger.warning("Failed to initialize logger: " + e.getMessage());
+        }
+        DistanceDAOLogger.addHandler(fileHandler);
+    }
+
 
     @Override
     public void addDistance(DistanceDTO distanceDTO) throws SQLException {
@@ -30,15 +46,23 @@ public class DistanceDAO implements DistanceService {
     }
 
     @Override
-    public void updateDistance(DistanceDTO distanceDTO) throws SQLException {
-        String query = "UPDATE Distances SET airport1Id=" + distanceDTO.getAirport1Id() + ", airport2Id=" + distanceDTO.getAirport2Id() + ", distance=" + distanceDTO.getDistance() + " WHERE id=" + distanceDTO.getId();
-        MySQL.execute(query);
+    public void updateDistance(DistanceDTO distanceDTO) {
+        String query = "UPDATE `Distances` SET `departure_airport_id`='"+distanceDTO.getAirport1Id()+"', `arrival_airport_id`='"+distanceDTO.getAirport2Id()+"', distance='"+distanceDTO.getDistance()+"' WHERE `distance_id`='"+distanceDTO.getId()+"'";
+        try {
+             MySQL.execute(query);
+        } catch (Exception e) {
+            DistanceDAOLogger.warning("Error updating Distance: " + e.getMessage());
+        }
     }
 
     @Override
-    public void deleteDistance(int id) throws SQLException {
-        String query = "DELETE FROM Distances WHERE id=" + id;
-        MySQL.execute(query);
+    public void deleteDistance(int id) {
+        String query = "DELETE FROM Distances WHERE `distance_id`=" + id;
+        try {
+            MySQL.execute(query);
+        } catch (Exception e) {
+            DistanceDAOLogger.warning("Error deleteing Distance: " + e.getMessage());
+        }
     }
 
     @Override

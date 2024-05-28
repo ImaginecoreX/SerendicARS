@@ -1,18 +1,30 @@
 package icx.application.main.sub;
 
 import com.formdev.flatlaf.FlatClientProperties;
+import icx.model.AircraftTypeDTO;
+import icx.service.impl.AircraftTypeDAO;
+import icx.util.LoggerUtil;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
  * @author sandaruwan
  */
 public class FormFlight extends javax.swing.JPanel {
-
+    
+    private AircraftTypeDAO aircraftTypeDAO;
+    
     public FormFlight() {
         initComponents();
-        
+        aircraftTypeDAO = new AircraftTypeDAO();
+        init();
     }
-
+    
+    public void init() {
+        aircraftTypeDAO.getTypes(aircraftTypeSelect);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

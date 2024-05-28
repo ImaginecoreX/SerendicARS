@@ -15,9 +15,9 @@ public interface DistanceService {
     
      public void addDistance(DistanceDTO distanceDTO) throws SQLException;
 
-    public void updateDistance(DistanceDTO distanceDTO) throws SQLException;
+    public void updateDistance(DistanceDTO distanceDTO);
 
-    public void deleteDistance(int id) throws SQLException;
+    public void deleteDistance(int id);
 
     public List<DistanceDTO> getAllDistances() throws SQLException;
     

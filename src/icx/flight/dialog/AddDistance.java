@@ -1,5 +1,6 @@
 package icx.flight.dialog;
 
+import icx.application.main.sub.FormDistanceCalculation;
 import icx.model.DistanceDTO;
 import icx.service.AirportService;
 import icx.service.impl.AirportDAO;
@@ -19,17 +20,19 @@ public class AddDistance extends javax.swing.JDialog {
     private JFrame app;
     private static AirportDAO airportDAO;
     private static DistanceDAO distanceDAO;
+    private  FormDistanceCalculation distancePanel;
 //    private String code;
 
     /**
      * Creates new form AddDistance
      */
-    public AddDistance(JFrame parent, boolean modal, String action) {
+    public AddDistance(JFrame parent, boolean modal, String action, Object distancePanel) {
         super(parent, action, modal);
         initComponents();
         airportDAO = new AirportDAO();
         distanceDAO = new DistanceDAO();
         this.app = parent;
+        this.distancePanel = this.distancePanel;
         init();
     }
 
@@ -243,7 +246,9 @@ public class AddDistance extends javax.swing.JDialog {
             
             try {
                 distanceDAO.addDistance(dto);
+                   this.distancePanel.init();
                 this.dispose();
+             
             } catch (SQLException e) {
                 LoggerUtil.logSevere(e.getMessage());
             }
@@ -281,7 +286,7 @@ public class AddDistance extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                AddDistance dialog = new AddDistance(new javax.swing.JFrame(), true, "Action");
+                AddDistance dialog = new AddDistance(new javax.swing.JFrame(), true, "Action", new Object());
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
