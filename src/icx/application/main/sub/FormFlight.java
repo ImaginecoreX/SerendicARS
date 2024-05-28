@@ -17,8 +17,8 @@ public class FormFlight extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        FlightScrollPanel = new javax.swing.JScrollPane();
+        flightContainerPanel = new javax.swing.JPanel();
         StatusContainer = new javax.swing.JPanel();
         TodayFlightsPanel = new javax.swing.JPanel();
         todayTitle = new javax.swing.JLabel();
@@ -44,9 +44,36 @@ public class FormFlight extends javax.swing.JPanel {
         updateFlight = new javax.swing.JButton();
         deleteFlight = new javax.swing.JButton();
         cardContainer = new javax.swing.JPanel();
+        cardContainerStartGap = new javax.swing.JPanel();
+        inputContainer = new javax.swing.JPanel();
+        aircraftTypeLabel = new javax.swing.JLabel();
+        aircraftTypeSelect = new javax.swing.JComboBox<>();
+        departureAirportSelect = new javax.swing.JComboBox<>();
+        departureAirportLabel = new javax.swing.JLabel();
+        arrivalAirportSelect = new javax.swing.JComboBox<>();
+        arrivalAirportLabel = new javax.swing.JLabel();
+        dapartureDateSelect = new javax.swing.JComboBox<>();
+        departureDateTimeLabel = new javax.swing.JLabel();
+        arrivalDateSelect = new javax.swing.JComboBox<>();
+        arrivalDateTimeLabel = new javax.swing.JLabel();
+        durationLabel = new javax.swing.JLabel();
+        durationField = new javax.swing.JTextField();
+        searchFlight = new javax.swing.JButton();
+        cardContainerMiddleGapBar = new javax.swing.JPanel();
+        resultContainer = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        cardContainerEndGap = new javax.swing.JPanel();
 
-        jScrollPane1.setBorder(null);
+        FlightScrollPanel.setBorder(null);
 
+        flightContainerPanel.setMinimumSize(new java.awt.Dimension(829, 0));
+        flightContainerPanel.setLayout(new javax.swing.BoxLayout(flightContainerPanel, javax.swing.BoxLayout.PAGE_AXIS));
+
+        StatusContainer.setMaximumSize(new java.awt.Dimension(98321, 192));
+        StatusContainer.setMinimumSize(new java.awt.Dimension(20, 192));
+        StatusContainer.setPreferredSize(new java.awt.Dimension(802, 198));
         StatusContainer.setLayout(new javax.swing.BoxLayout(StatusContainer, javax.swing.BoxLayout.LINE_AXIS));
 
         TodayFlightsPanel.setBackground(new java.awt.Color(224, 233, 255));
@@ -85,7 +112,7 @@ public class FormFlight extends javax.swing.JPanel {
                     .addComponent(jLabel1)
                     .addComponent(todayStatus)
                     .addComponent(todayTitle))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TodayFlightsPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(printTodayFlightReport, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -102,7 +129,7 @@ public class FormFlight extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(printTodayFlightReport, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         StatusContainer.add(TodayFlightsPanel);
@@ -118,7 +145,7 @@ public class FormFlight extends javax.swing.JPanel {
         );
         gapOnePanelLayout.setVerticalGroup(
             gapOnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 198, Short.MAX_VALUE)
         );
 
         StatusContainer.add(gapOnePanel);
@@ -158,7 +185,7 @@ public class FormFlight extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(takeoffedStatus)
                     .addComponent(takeOffedTitle))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TakeOffedPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(printTakeoffedReport, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,7 +202,7 @@ public class FormFlight extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(printTakeoffedReport, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         StatusContainer.add(TakeOffedPanel);
@@ -191,7 +218,7 @@ public class FormFlight extends javax.swing.JPanel {
         );
         gapTwoPanelLayout.setVerticalGroup(
             gapTwoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 198, Short.MAX_VALUE)
         );
 
         StatusContainer.add(gapTwoPanel);
@@ -231,7 +258,7 @@ public class FormFlight extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(closedStatus)
                     .addComponent(closedTitle))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClosedPannelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(printClosedReport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,13 +275,18 @@ public class FormFlight extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(printClosedReport, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         StatusContainer.add(ClosedPannel);
 
+        flightContainerPanel.add(StatusContainer);
+
+        titleContainer.setMaximumSize(new java.awt.Dimension(32767, 120));
+        titleContainer.setMinimumSize(new java.awt.Dimension(0, 120));
+
         back.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
-        back.setText("Dashboard >> Flight Management");
+        back.setText("Dashboard >> Flight Management >> Flights");
 
         jTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jTitle.setText("Flight Management");
@@ -273,32 +305,32 @@ public class FormFlight extends javax.swing.JPanel {
         titleContainerLayout.setHorizontalGroup(
             titleContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(titleContainerLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(titleContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(titleContainerLayout.createSequentialGroup()
                         .addComponent(back)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(titleContainerLayout.createSequentialGroup()
                         .addComponent(jTitle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                         .addComponent(registerFlight)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(updateFlight)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(deleteFlight)
-                        .addGap(26, 26, 26))))
+                        .addGap(20, 20, 20))))
         );
         titleContainerLayout.setVerticalGroup(
             titleContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(titleContainerLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(back)
                 .addGroup(titleContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(titleContainerLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(back)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTitle))
                     .addGroup(titleContainerLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(62, 62, 62)
                         .addGroup(titleContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(updateFlight, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(registerFlight, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,47 +338,211 @@ public class FormFlight extends javax.swing.JPanel {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout cardContainerLayout = new javax.swing.GroupLayout(cardContainer);
-        cardContainer.setLayout(cardContainerLayout);
-        cardContainerLayout.setHorizontalGroup(
-            cardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        flightContainerPanel.add(titleContainer);
+
+        cardContainer.setLayout(new javax.swing.BoxLayout(cardContainer, javax.swing.BoxLayout.LINE_AXIS));
+
+        cardContainerStartGap.setMaximumSize(new java.awt.Dimension(10, 32767));
+        cardContainerStartGap.setMinimumSize(new java.awt.Dimension(10, 100));
+
+        javax.swing.GroupLayout cardContainerStartGapLayout = new javax.swing.GroupLayout(cardContainerStartGap);
+        cardContainerStartGap.setLayout(cardContainerStartGapLayout);
+        cardContainerStartGapLayout.setHorizontalGroup(
+            cardContainerStartGapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        cardContainerStartGapLayout.setVerticalGroup(
+            cardContainerStartGapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 624, Short.MAX_VALUE)
+        );
+
+        cardContainer.add(cardContainerStartGap);
+
+        inputContainer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 88, 97), 1, true));
+        inputContainer.setMaximumSize(new java.awt.Dimension(270, 32767));
+        inputContainer.setMinimumSize(new java.awt.Dimension(180, 0));
+
+        aircraftTypeLabel.setText("Aircraft Type");
+
+        aircraftTypeSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        departureAirportSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        departureAirportLabel.setText("Departure Airport");
+
+        arrivalAirportSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        arrivalAirportLabel.setText("Arrival Airport");
+
+        dapartureDateSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        departureDateTimeLabel.setText("Departure Date & Time");
+
+        arrivalDateSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        arrivalDateTimeLabel.setText("Arrival Date & Time");
+
+        durationLabel.setText("Duration");
+
+        durationField.setEditable(false);
+
+        searchFlight.setText("Search Flight");
+
+        javax.swing.GroupLayout inputContainerLayout = new javax.swing.GroupLayout(inputContainer);
+        inputContainer.setLayout(inputContainerLayout);
+        inputContainerLayout.setHorizontalGroup(
+            inputContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputContainerLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(inputContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(durationLabel)
+                    .addComponent(arrivalDateTimeLabel)
+                    .addComponent(departureDateTimeLabel)
+                    .addComponent(arrivalAirportLabel)
+                    .addComponent(departureAirportLabel)
+                    .addComponent(aircraftTypeLabel)
+                    .addComponent(aircraftTypeSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(departureAirportSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(arrivalAirportSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dapartureDateSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(arrivalDateSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(durationField)
+                    .addComponent(searchFlight, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        inputContainerLayout.setVerticalGroup(
+            inputContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputContainerLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(aircraftTypeLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(aircraftTypeSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(departureAirportLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(departureAirportSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(arrivalAirportLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(arrivalAirportSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(departureDateTimeLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dapartureDateSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(arrivalDateTimeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(arrivalDateSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(durationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(durationField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(searchFlight, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        cardContainer.add(inputContainer);
+
+        cardContainerMiddleGapBar.setMaximumSize(new java.awt.Dimension(10, 32767));
+        cardContainerMiddleGapBar.setMinimumSize(new java.awt.Dimension(10, 100));
+
+        javax.swing.GroupLayout cardContainerMiddleGapBarLayout = new javax.swing.GroupLayout(cardContainerMiddleGapBar);
+        cardContainerMiddleGapBar.setLayout(cardContainerMiddleGapBarLayout);
+        cardContainerMiddleGapBarLayout.setHorizontalGroup(
+            cardContainerMiddleGapBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        cardContainerMiddleGapBarLayout.setVerticalGroup(
+            cardContainerMiddleGapBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 624, Short.MAX_VALUE)
+        );
+
+        cardContainer.add(cardContainerMiddleGapBar);
+
+        resultContainer.setLayout(new javax.swing.BoxLayout(resultContainer, javax.swing.BoxLayout.Y_AXIS));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(79, 88, 97)));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 522, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 564, Short.MAX_VALUE)
+        );
+
+        resultContainer.add(jPanel2);
+
+        jPanel4.setMaximumSize(new java.awt.Dimension(32767, 10));
+        jPanel4.setMinimumSize(new java.awt.Dimension(0, 10));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 524, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        resultContainer.add(jPanel4);
+
+        jPanel3.setBackground(new java.awt.Color(224, 233, 255));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 88, 97), 1, true));
+        jPanel3.setMaximumSize(new java.awt.Dimension(32767, 48));
+        jPanel3.setMinimumSize(new java.awt.Dimension(100, 48));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        cardContainerLayout.setVerticalGroup(
-            cardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 113, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 46, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(StatusContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(titleContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(cardContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        resultContainer.add(jPanel3);
+
+        cardContainer.add(resultContainer);
+
+        cardContainerEndGap.setMaximumSize(new java.awt.Dimension(10, 32767));
+        cardContainerEndGap.setMinimumSize(new java.awt.Dimension(10, 100));
+        cardContainerEndGap.setPreferredSize(new java.awt.Dimension(10, 610));
+
+        javax.swing.GroupLayout cardContainerEndGapLayout = new javax.swing.GroupLayout(cardContainerEndGap);
+        cardContainerEndGap.setLayout(cardContainerEndGapLayout);
+        cardContainerEndGapLayout.setHorizontalGroup(
+            cardContainerEndGapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(StatusContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(titleContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cardContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+        cardContainerEndGapLayout.setVerticalGroup(
+            cardContainerEndGapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 624, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        cardContainer.add(cardContainerEndGap);
+
+        flightContainerPanel.add(cardContainer);
+
+        FlightScrollPanel.setViewportView(flightContainerPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+            .addComponent(FlightScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .addComponent(FlightScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -364,26 +560,47 @@ public class FormFlight extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ClosedPannel;
+    private javax.swing.JScrollPane FlightScrollPanel;
     private javax.swing.JPanel StatusContainer;
     private javax.swing.JPanel TakeOffedPanel;
     private javax.swing.JPanel TodayFlightsPanel;
+    private javax.swing.JLabel aircraftTypeLabel;
+    private javax.swing.JComboBox<String> aircraftTypeSelect;
+    private javax.swing.JLabel arrivalAirportLabel;
+    private javax.swing.JComboBox<String> arrivalAirportSelect;
+    private javax.swing.JComboBox<String> arrivalDateSelect;
+    private javax.swing.JLabel arrivalDateTimeLabel;
     private javax.swing.JLabel back;
     private javax.swing.JPanel cardContainer;
+    private javax.swing.JPanel cardContainerEndGap;
+    private javax.swing.JPanel cardContainerMiddleGapBar;
+    private javax.swing.JPanel cardContainerStartGap;
     private javax.swing.JLabel closedStatus;
     private javax.swing.JLabel closedTitle;
+    private javax.swing.JComboBox<String> dapartureDateSelect;
     private javax.swing.JButton deleteFlight;
+    private javax.swing.JLabel departureAirportLabel;
+    private javax.swing.JComboBox<String> departureAirportSelect;
+    private javax.swing.JLabel departureDateTimeLabel;
+    private javax.swing.JTextField durationField;
+    private javax.swing.JLabel durationLabel;
+    private javax.swing.JPanel flightContainerPanel;
     private javax.swing.JPanel gapOnePanel;
     private javax.swing.JPanel gapTwoPanel;
+    private javax.swing.JPanel inputContainer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel jTitle;
     private javax.swing.JButton printClosedReport;
     private javax.swing.JButton printTakeoffedReport;
     private javax.swing.JButton printTodayFlightReport;
     private javax.swing.JButton registerFlight;
+    private javax.swing.JPanel resultContainer;
+    private javax.swing.JButton searchFlight;
     private javax.swing.JLabel takeOffedTitle;
     private javax.swing.JLabel takeoffedStatus;
     private javax.swing.JPanel titleContainer;

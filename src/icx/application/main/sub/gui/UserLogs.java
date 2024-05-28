@@ -19,17 +19,20 @@ import icx.util.Report;
  * @author 94701
  */
 public class UserLogs extends javax.swing.JDialog {
+    
+    HashMap<String, Object> map;
 
     UserManagement userManagement;
 
     /**
      * Creates new form UserLogs
      */
-    public UserLogs(javax.swing.JPanel userManagement, String userId) {
+    public UserLogs(javax.swing.JPanel userManagement, String userId,HashMap<String,Object> map) {
         initComponents();
         this.userManagement = (UserManagement) userManagement;
         this.userManagement.getUserServiceIMPL().loadUserLogs(jTable1, userId);
         this.userManagement.getUserLogsBtn().setEnabled(false);
+        this.map = map;
         jButton3.setIcon(new FlatSVGIcon("icx/icon/svg/close.svg"));
     }
 
@@ -191,16 +194,10 @@ public class UserLogs extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("fname", "");
-        map.put("lname", "");
-        map.put("mobile", "");
-        map.put("email", "");
-        map.put("role", "");
-
+  
         String reportPath = "src//icx//resources//serendic_ars_user.jasper";
 
-        new Report().print(jTable1, reportPath, map);
+        new Report().print(jTable1, reportPath, this.map);
 
 
     }//GEN-LAST:event_jButton1ActionPerformed

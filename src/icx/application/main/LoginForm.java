@@ -3,8 +3,12 @@ package icx.application.main;
 import com.formdev.flatlaf.FlatClientProperties;
 import net.miginfocom.swing.MigLayout;
 import icx.application.Application;
+import icx.model.UserDTO;
 import icx.service.impl.UserServiceIMPL;
 import icx.model.UserLoginReturnDTO;
+import icx.util.loginUser;
+import javax.swing.JOptionPane;
+import icx.util.Validation;
 
 /**
  *
@@ -86,22 +90,26 @@ public class LoginForm extends javax.swing.JPanel {
     private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
             Application.login();
 
-
 //        String email = txtUser.getText();
 //        String password = String.valueOf(txtPass.getPassword());
 //        if (email.isEmpty()) {
-//
+//            JOptionPane.showMessageDialog(this, "Please enter email", "Warning", JOptionPane.WARNING_MESSAGE);
 //        } else if (password.isEmpty()) {
-//
+//            JOptionPane.showMessageDialog(this, "Please enter password", "Warning", JOptionPane.WARNING_MESSAGE);
+//        } else if (Validation.email(email)) {
+//            JOptionPane.showMessageDialog(this, "Invalid email", "Warning", JOptionPane.WARNING_MESSAGE);
+//        } else if (Validation.password(password)) {
+//            JOptionPane.showMessageDialog(this, "Invalid password", "Warning", JOptionPane.WARNING_MESSAGE);
 //        } else {
 //
 //            UserServiceIMPL userService = new UserServiceIMPL();
 //            UserLoginReturnDTO userloginReturnDTO = userService.userLogin(email, password);
 //            if (userloginReturnDTO.isLogin()) {
-//                System.out.println(userloginReturnDTO.getUserData().getFirstName());
+//
+//                loginUser.data = userloginReturnDTO.getUserData();
 //                Application.login();
 //            } else {
-//                System.out.println(userloginReturnDTO.getMsg());
+//              JOptionPane.showMessageDialog(this, "Invalid User", "Warning", JOptionPane.WARNING_MESSAGE);
 //            }
 //
 //        }

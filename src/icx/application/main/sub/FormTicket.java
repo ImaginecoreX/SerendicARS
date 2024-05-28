@@ -1,8 +1,6 @@
 package icx.application.main.sub;
 
 import com.formdev.flatlaf.FlatClientProperties;
-import com.lowagie.text.pdf.BarcodeEAN;
-import com.lowagie.text.pdf.PdfContentByte;
 import icx.application.main.sub.gui.AvailableFlight;
 import icx.application.main.sub.gui.BookTicket;
 import icx.application.main.sub.gui.FreeSeats;
@@ -767,7 +765,7 @@ public class FormTicket extends javax.swing.JPanel {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
             jComboBox1.setSelectedIndex(0);
             jComboBox2.setSelectedIndex(0);
-            jTextField1.setText("");
+//            jTextField1.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

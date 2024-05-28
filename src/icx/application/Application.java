@@ -20,7 +20,7 @@ import raven.toast.Notifications;
  */
 public class Application extends javax.swing.JFrame {
 
-    private static Application app;
+    public static Application app;
     private final MainForm mainForm;
     private final LoginForm loginForm;
 

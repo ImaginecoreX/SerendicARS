@@ -16,8 +16,12 @@ import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import icx.application.Application;
+import icx.application.main.sub.FormAircraftType;
+import icx.application.main.sub.FormAirline;
+import icx.application.main.sub.FormAirport;
 import icx.application.main.sub.FormClass;
 import icx.application.main.sub.FormDashboard;
+import icx.application.main.sub.FormDistanceCalculation;
 import icx.application.main.sub.FormFlight;
 import icx.application.main.sub.FormNotification;
 import icx.application.main.sub.FormPassenger;
@@ -25,7 +29,7 @@ import icx.application.main.sub.FormSchedule;
 import icx.application.main.sub.FormSeat;
 import icx.application.main.sub.FormTicket;
 import icx.application.main.sub.FormUser;
-import icx.application.main.sub.TestUI;
+import icx.application.main.sub.TestComponents;
 import icx.menu.Menu;
 import icx.menu.MenuAction;
 
@@ -86,24 +90,37 @@ public class MainForm extends JLayeredPane {
 //                    action.cancel();
 //                }
                 Application.showForm(new FormUser());
-            }else if(index == 1){
+            } else if (index == 1) {
                 Application.showForm(new FormUser());
-            }else if(index == 2){
-            Application.showForm(new FormPassenger());
-            }else if(index == 3){
-            Application.showForm(new FormSchedule());
-            }else if(index == 4){
-            Application.showForm(new FormTicket());
-            }else if(index == 5){
-            Application.showForm(new FormFlight());
-            }else if(index == 6){
-//            Application.showForm(new FormClass());
-Application.showForm(new TestUI());
-            }else if(index == 7){
-            Application.showForm(new FormSeat());
-            }else if(index == 8){
-            Application.showForm(new FormNotification());
-            }else if (index == 9) {
+            } else if (index == 2) {
+                Application.showForm(new FormPassenger());
+            } else if (index == 3) {
+//                Application.showForm(new FormSchedule());                
+                Application.showForm(new TestComponents());
+
+            } else if (index == 4) {
+                Application.showForm(new FormTicket());
+            } else if (index == 5) {
+                if (subIndex == 1) {
+                    Application.showForm(new FormFlight());
+                } else if (subIndex == 2) {
+                    Application.showForm(new FormAirline());
+                } else if (subIndex == 3) {
+                    Application.showForm(new FormAirport());
+                } else if (subIndex == 4) {
+                    Application.showForm(new FormAircraftType());
+                } else if (subIndex == 5) {
+                    Application.showForm(new FormDistanceCalculation());
+                } else {
+                    action.cancel();
+                }
+            } else if (index == 6) {
+                Application.showForm(new FormClass());
+            } else if (index == 7) {
+                Application.showForm(new FormSeat());
+            } else if (index == 8) {
+                Application.showForm(new FormNotification());
+            } else if (index == 9) {
                 Application.logout();
             } else {
                 action.cancel();

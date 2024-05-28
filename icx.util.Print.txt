@@ -1,4 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
+<record>
+  <date>2024-05-28T02:41:14.042775Z</date>
+  <millis>1716864074042</millis>
+  <nanos>775000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util.Print</logger>
+  <level>WARNING</level>
+  <class>icx.util.Report</class>
+  <method>print</method>
+  <thread>33</thread>
+  <message>net.sf.jasperreports.engine.JRException: java.io.FileNotFoundException: icx/flight/reports/AircraftManufactureReport.jasper</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T02:45:46.125982Z</date>
+  <millis>1716864346125</millis>
+  <nanos>982000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util.Print</logger>
+  <level>WARNING</level>
+  <class>icx.util.Report</class>
+  <method>print</method>
+  <thread>33</thread>
+  <message>net.sf.jasperreports.engine.JRException: Column index out of range in result set: 0.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T02:47:57.362759Z</date>
+  <millis>1716864477362</millis>
+  <nanos>759000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util.Print</logger>
+  <level>WARNING</level>
+  <class>icx.util.Report</class>
+  <method>print</method>
+  <thread>33</thread>
+  <message>net.sf.jasperreports.engine.JRException: Column index out of range in result set: 0.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T02:51:34.255242Z</date>
+  <millis>1716864694255</millis>
+  <nanos>242000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util.Print</logger>
+  <level>WARNING</level>
+  <class>icx.util.Report</class>
+  <method>print</method>
+  <thread>33</thread>
+  <message>net.sf.jasperreports.engine.JRException: Column index out of range in result set: 0.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T03:02:12.859481Z</date>
+  <millis>1716865332859</millis>
+  <nanos>481000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util.Print</logger>
+  <level>WARNING</level>
+  <class>icx.util.Report</class>
+  <method>print</method>
+  <thread>33</thread>
+  <message>net.sf.jasperreports.engine.util.JRFontNotFoundException: Font "Roboto
+" is not available to the JVM. See the Javadoc for more details.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-28T03:03:08.488328Z</date>
+  <millis>1716865388488</millis>
+  <nanos>328000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.util.Print</logger>
+  <level>WARNING</level>
+  <class>icx.util.Report</class>
+  <method>print</method>
+  <thread>33</thread>
+  <message>net.sf.jasperreports.engine.util.JRFontNotFoundException: Font "Roboto
+" is not available to the JVM. See the Javadoc for more details.</message>
+</record>
 </log>

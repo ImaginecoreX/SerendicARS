@@ -5,15 +5,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
 
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
+<record>
+  <date>2024-05-24T20:19:41.533538700Z</date>
+  <millis>1716581981533</millis>
+  <nanos>538700</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUsers</method>
+  <thread>18</thread>
+  <message>java.lang.ArithmeticException: / by zero</message>
+</record>
+<record>
+  <date>2024-05-24T20:20:34.666825200Z</date>
+  <millis>1716582034666</millis>
+  <nanos>825200</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUsers</method>
+  <thread>18</thread>
+  <message>java.lang.ArithmeticException: / by zero</message>
+</record>
+
 </log>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
@@ -22,58 +39,142 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
+<record>
+  <date>2024-05-25T17:02:45.993332Z</date>
+  <millis>1716656565993</millis>
+  <nanos>332000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>userLogin</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-25T17:02:47.253603Z</date>
+  <millis>1716656567253</millis>
+  <nanos>603000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>userLogin</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-25T17:02:47.453673Z</date>
+  <millis>1716656567453</millis>
+  <nanos>673000</nanos>
+  <sequence>2</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>userLogin</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-25T17:02:47.586914Z</date>
+  <millis>1716656567586</millis>
+  <nanos>914000</nanos>
+  <sequence>3</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>userLogin</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-25T17:02:47.820378Z</date>
+  <millis>1716656567820</millis>
+  <nanos>378000</nanos>
+  <sequence>4</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>userLogin</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-25T17:02:48.286694Z</date>
+  <millis>1716656568286</millis>
+  <nanos>694000</nanos>
+  <sequence>5</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>userLogin</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-25T17:02:48.570066Z</date>
+  <millis>1716656568570</millis>
+  <nanos>66000</nanos>
+  <sequence>6</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>userLogin</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
 </log>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
+<record>
+  <date>2024-05-26T02:40:56.677432Z</date>
+  <millis>1716691256677</millis>
+  <nanos>432000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUserTypes</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-26T02:40:56.688574Z</date>
+  <millis>1716691256688</millis>
+  <nanos>574000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUsers</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-26T02:41:38.843400Z</date>
+  <millis>1716691298843</millis>
+  <nanos>400000</nanos>
+  <sequence>2</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUserTypes</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-26T02:41:38.843871Z</date>
+  <millis>1716691298843</millis>
+  <nanos>871000</nanos>
+  <sequence>3</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUsers</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
 </log>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
