@@ -44,7 +44,11 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbUser">
           <Properties>
+<<<<<<< HEAD
             <Property name="text" type="java.lang.String" value="User Name"/>
+=======
+            <Property name="text" type="java.lang.String" value="Email"/>
+>>>>>>> 792616c6aadbd71c837148df9f443a5cd034034b
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtUser">
@@ -67,4 +71,8 @@
       </SubComponents>
     </Container>
   </SubComponents>
+<<<<<<< HEAD
 </Form>
+=======
+</Form>
+>>>>>>> 792616c6aadbd71c837148df9f443a5cd034034b

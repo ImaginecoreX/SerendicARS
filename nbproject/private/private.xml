@@ -2,6 +2,24 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormPassenger.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormAircraftType.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/MainForm.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/test/icx/util/ValidationTest.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormDashboard.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/gui/UserLogs.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormAirline.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/UpdateSchedule.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormUser.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/Application.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/CreateSchedule.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/DefaultForm.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormSchedule.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormTicket.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/menu/MenuItem.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/util/Email.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SerendicX/SerendicARS/src/icx/application/main/sub/FormFlight.java</file>
+        </group>
     </open-files>
 </project-private>

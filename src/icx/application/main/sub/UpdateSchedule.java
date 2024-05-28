@@ -25,8 +25,6 @@ public class UpdateSchedule extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        timePicker1 = new com.raven.swing.TimePicker();
-        timePicker2 = new com.raven.swing.TimePicker();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -49,10 +47,6 @@ public class UpdateSchedule extends javax.swing.JDialog {
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         datetxt = new javax.swing.JTextField();
-
-        timePicker1.setDisplayText(departureTimetxt);
-
-        timePicker2.setDisplayText(arrivalTimetxt);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -531,7 +525,5 @@ public class UpdateSchedule extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField searchScheduletxt;
-    private com.raven.swing.TimePicker timePicker1;
-    private com.raven.swing.TimePicker timePicker2;
     // End of variables declaration//GEN-END:variables
 }

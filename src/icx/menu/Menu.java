@@ -32,7 +32,11 @@ public class Menu extends JPanel {
         {"Schedules"},
         {"Ticket"},
         {"~OTHER~"},
+
         {"Flight"},
+
+        {"Flight Management", "Flights", "Airline", "Airport", "Aircraft Type", "Distance Calculation"},
+
         {"Class"},
         {"Seats"},
         {"Notification"},
@@ -63,7 +67,10 @@ public class Menu extends JPanel {
 
     private final List<MenuEvent> events = new ArrayList<>();
     private boolean menuFull = true;
+
     private final String headerName = " SerendicX";
+
+    private final String headerName = " SerendicARS";
 
     protected final boolean hideMenuTitleOnMinimum = true;
     protected final int menuTitleLeftInset = 5;

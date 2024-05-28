@@ -1,6 +1,7 @@
 package icx.application.main.sub;
 
 import com.formdev.flatlaf.FlatClientProperties;
+
 import icx.model.MySQL;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
@@ -26,13 +27,14 @@ public class FormSchedule extends javax.swing.JPanel {
         initComponents();
         lb.putClientProperty(FlatClientProperties.STYLE, ""
                 + "font:$h1.font");
+
         loadFlights();
+
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -290,6 +292,10 @@ public class FormSchedule extends javax.swing.JPanel {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 6, Short.MAX_VALUE)
         );
+        lb = new javax.swing.JLabel();
+
+        lb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb.setText("Flight Schedule Management Form");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -442,7 +448,7 @@ public class FormSchedule extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_getReportBtnActionPerformed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton createScheduleBtn;
     private javax.swing.JButton deleteScheduleBtn;
     private javax.swing.JButton getReportBtn;
@@ -465,5 +471,30 @@ public class FormSchedule extends javax.swing.JPanel {
     private javax.swing.JLabel lb;
     private javax.swing.JButton searchScheduleBtn;
     private javax.swing.JButton updateScheduleBtn;
+
+    .addGroup(layout.createSequentialGroup
+
+    
+
+    ()
+                .addContainerGap()
+                .addComponent(lb, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+    layout.setVerticalGroup (
+            layout.createParallelGroup
+
+
+
+(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+    }// </editor-fold>                        
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lb;
     // End of variables declaration//GEN-END:variables
 }

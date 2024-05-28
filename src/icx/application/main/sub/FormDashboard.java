@@ -1,6 +1,10 @@
 package icx.application.main.sub;
 
 import com.formdev.flatlaf.FlatClientProperties;
+
+import icx.application.main.PanelHeaderBar;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 import raven.toast.Notifications;
 
 /**
@@ -9,10 +13,13 @@ import raven.toast.Notifications;
  */
 public class FormDashboard extends javax.swing.JPanel {
 
+//       private final PanelHeaderBar headerBar;
+//    private final JPanel contentPanel;
     public FormDashboard() {
         initComponents();
         lb.putClientProperty(FlatClientProperties.STYLE, ""
                 + "font:$h1.font");
+
     }
 
     @SuppressWarnings("unchecked")
@@ -21,6 +28,9 @@ public class FormDashboard extends javax.swing.JPanel {
 
         lb = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+
+
+        jPanel1 = new javax.swing.JPanel();
 
         lb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb.setText("Dashboard");
@@ -32,11 +42,28 @@ public class FormDashboard extends javax.swing.JPanel {
             }
         });
 
+
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+
                 .addContainerGap()
                 .addComponent(lb, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
                 .addContainerGap())
@@ -44,13 +71,29 @@ public class FormDashboard extends javax.swing.JPanel {
                 .addGap(325, 325, 325)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lb, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lb)
+
                 .addGap(173, 173, 173)
+
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+
                 .addComponent(jButton1)
                 .addContainerGap(237, Short.MAX_VALUE))
         );
@@ -62,6 +105,9 @@ public class FormDashboard extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+
+
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb;
     // End of variables declaration//GEN-END:variables
 }
