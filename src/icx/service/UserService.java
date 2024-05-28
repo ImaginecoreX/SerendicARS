@@ -16,7 +16,7 @@ public interface UserService {
     
     public UserLoginReturnDTO userLogin(String email,String password);
     
-    public void userAdd(String mobile,String fname,String lname,String password,String email,String userType);
+    public boolean userAdd(String mobile,String fname,String lname,String password,String email,String userType);
     
     public HashMap<String,String> loadUserTypes(JComboBox jcombobox);
     
@@ -31,5 +31,7 @@ public interface UserService {
     public void updateUserRole(String id,String type);
     
     public void tableLoadRole(JTable jTable);
+    
+    public String userCount(int status);
     
 }

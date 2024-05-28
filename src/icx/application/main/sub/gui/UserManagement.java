@@ -61,6 +61,19 @@ public class UserManagement extends javax.swing.JPanel {
         this.userTypesId = userServiceIMPL.loadUserTypes(jComboBox1);
     }
 
+    private void refresh() {
+
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField4.setText("");
+        jTextField3.setText("");
+        jPasswordField1.setText("");
+        jComboBox1.setSelectedIndex(0);
+        jComboBox2.setSelectedIndex(0);
+        userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` ORDER BY `u_id` ASC");
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -80,7 +93,6 @@ public class UserManagement extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -108,7 +120,7 @@ public class UserManagement extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGap(0, 355, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,14 +165,6 @@ public class UserManagement extends javax.swing.JPanel {
         });
         jPanel9.add(jButton5);
 
-        jButton6.setText("Back");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(jButton6);
-
         jPanel5.add(jPanel9);
 
         jPanel3.add(jPanel5);
@@ -193,7 +197,7 @@ public class UserManagement extends javax.swing.JPanel {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 777, Short.MAX_VALUE)
+            .addGap(0, 710, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel8Layout.createSequentialGroup()
                     .addContainerGap()
@@ -396,7 +400,7 @@ public class UserManagement extends javax.swing.JPanel {
             map.put("mobile", jTable1.getValueAt(selectRow, 4));
             map.put("email", jTable1.getValueAt(selectRow, 5));
             map.put("role", jTable1.getValueAt(selectRow, 6));
-            new UserLogs(this, String.valueOf(jTable1.getValueAt(selectRow, 0)),map).setVisible(true);
+            new UserLogs(this, String.valueOf(jTable1.getValueAt(selectRow, 0)), map).setVisible(true);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -481,8 +485,15 @@ public class UserManagement extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "select user role", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            userServiceIMPL.userAdd(mobile, fname, lname, password, email, userTypesId.get(type));
-            userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` ORDER BY `u_id` ASC");
+            boolean user = userServiceIMPL.userAdd(mobile, fname, lname, password, email, userTypesId.get(type));
+            
+            if(user){
+              refresh();
+            }else{
+              JOptionPane.showMessageDialog(this, "Already Registered User", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+
+          
 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -519,23 +530,36 @@ public class UserManagement extends javax.swing.JPanel {
         } else {
 
             userServiceIMPL.userUpdate(String.valueOf(jTable1.getValueAt(selectrow, 0)), mobile, fname, lname, password, email, status);
-            userServiceIMPL.loadUsers(jTable1, "SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` ORDER BY `u_id` ASC");
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(true);
+            jButton4.setEnabled(false);
+            refresh();
 
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        int selectrow = jTable1.getSelectedRow();
+
+        if (selectrow != -1) {
+
+            refresh();
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(true);
+            jButton4.setEnabled(false);
+
+        } else {
+
+            refresh();
+
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         new UserRole(this).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -552,7 +576,6 @@ public class UserManagement extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel3;
