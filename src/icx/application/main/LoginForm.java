@@ -105,11 +105,12 @@ public class LoginForm extends javax.swing.JPanel {
             UserServiceIMPL userService = new UserServiceIMPL();
             UserLoginReturnDTO userloginReturnDTO = userService.userLogin(email, password);
             if (userloginReturnDTO.isLogin()) {
-
+                
                 loginUser.data = userloginReturnDTO.getUserData();
+                System.out.println(icx.util.loginUser.data.getType());
                 Application.login();
             } else {
-              JOptionPane.showMessageDialog(this, "Invalid User", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Invalid User", "Warning", JOptionPane.WARNING_MESSAGE);
             }
 
         }
