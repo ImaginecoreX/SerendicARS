@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T09:36:38.870187Z</date>
+  <millis>1716716198870</millis>
+  <nanos>187000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>loadCountries</method>
+  <thread>33</thread>
+  <message>java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T13:01:50.570873Z</date>
+  <millis>1716728510570</millis>
+  <nanos>873000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>loadCountries</method>
+  <thread>33</thread>
+  <message>java.sql.SQLException: Column 'airline_id' not found.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T14:39:21.002775Z</date>
+  <millis>1716734361002</millis>
+  <nanos>775000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAllAirlineCountriesCount</method>
+  <thread>33</thread>
+  <message>java.sql.SQLException: Column 'count' not found.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T14:58:10.161606Z</date>
+  <millis>1716735490161</millis>
+  <nanos>606000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAllAirlineCountriesCount</method>
+  <thread>33</thread>
+  <message>java.sql.SQLException: Before start of result set</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T14:58:31.282462Z</date>
+  <millis>1716735511282</millis>
+  <nanos>462000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAllAirlineCountriesCount</method>
+  <thread>33</thread>
+  <message>java.sql.SQLException: Before start of result set</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T14:59:24.926155Z</date>
+  <millis>1716735564926</millis>
+  <nanos>155000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAllAirlineCount</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "icx.service.impl.AirlineServiceIMPL.airlineList" is null</message>
+</record>
+<record>
+  <date>2024-05-26T14:59:24.932346Z</date>
+  <millis>1716735564932</millis>
+  <nanos>346000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAllInActiveAirlineCount</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "icx.service.impl.AirlineServiceIMPL.airlineList" is null</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T23:36:14.866225Z</date>
+  <millis>1716766574866</millis>
+  <nanos>225000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>34</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:36:43.989845Z</date>
+  <millis>1716766603989</millis>
+  <nanos>845000</nanos>
+  <sequence>2</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>34</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA' OR `name` = 'Global Air' OR `code` = 'GLA'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:36:44.523526Z</date>
+  <millis>1716766604523</millis>
+  <nanos>526000</nanos>
+  <sequence>3</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>34</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA' OR `name` = 'Global Air' OR `code` = 'GLA'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:36:44.723518Z</date>
+  <millis>1716766604723</millis>
+  <nanos>518000</nanos>
+  <sequence>4</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>34</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA' OR `name` = 'Global Air' OR `code` = 'GLA'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:36:46.058164Z</date>
+  <millis>1716766606058</millis>
+  <nanos>164000</nanos>
+  <sequence>5</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>34</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA' OR `name` = 'Global Air' OR `code` = 'GLA'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:36:46.289852Z</date>
+  <millis>1716766606289</millis>
+  <nanos>852000</nanos>
+  <sequence>6</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>34</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA' OR `name` = 'Global Air' OR `code` = 'GLA'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:36:46.507187Z</date>
+  <millis>1716766606507</millis>
+  <nanos>187000</nanos>
+  <sequence>7</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>34</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA' OR `name` = 'Global Air' OR `code` = 'GLA'' at line 1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T23:38:32.866829Z</date>
+  <millis>1716766712866</millis>
+  <nanos>829000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>33</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'USA'' at line 1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T23:41:54.463652Z</date>
+  <millis>1716766914463</millis>
+  <nanos>652000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>33</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'Item 1'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:41:55.938376Z</date>
+  <millis>1716766915938</millis>
+  <nanos>376000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>33</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'Item 1'' at line 1</message>
+</record>
+<record>
+  <date>2024-05-26T23:41:56.138635Z</date>
+  <millis>1716766916138</millis>
+  <nanos>635000</nanos>
+  <sequence>2</sequence>
+  <logger>icx.service.impl.AirlineServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AirlineServiceIMPL</class>
+  <method>getAirlines</method>
+  <thread>33</thread>
+  <message>Error getting airlines: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `country` = 'Item 1'' at line 1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>

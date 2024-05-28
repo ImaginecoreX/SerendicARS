@@ -124,3 +124,79 @@
   <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-05-26T02:40:56.677432Z</date>
+  <millis>1716691256677</millis>
+  <nanos>432000</nanos>
+  <sequence>0</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUserTypes</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-26T02:40:56.688574Z</date>
+  <millis>1716691256688</millis>
+  <nanos>574000</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUsers</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-26T02:41:38.843400Z</date>
+  <millis>1716691298843</millis>
+  <nanos>400000</nanos>
+  <sequence>2</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUserTypes</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+<record>
+  <date>2024-05-26T02:41:38.843871Z</date>
+  <millis>1716691298843</millis>
+  <nanos>871000</nanos>
+  <sequence>3</sequence>
+  <logger>icx.service.impl.UserServiceIMPL</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.UserServiceIMPL</class>
+  <method>loadUsers</method>
+  <thread>33</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.sql.Connection.createStatement()" because "icx.model.MySQL.connection" is null</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>

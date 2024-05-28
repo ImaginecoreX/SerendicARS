@@ -29,6 +29,7 @@ import icx.application.main.sub.FormSchedule;
 import icx.application.main.sub.FormSeat;
 import icx.application.main.sub.FormTicket;
 import icx.application.main.sub.FormUser;
+import icx.application.main.sub.TestComponents;
 import icx.menu.Menu;
 import icx.menu.MenuAction;
 
@@ -94,7 +95,9 @@ public class MainForm extends JLayeredPane {
             } else if (index == 2) {
                 Application.showForm(new FormPassenger());
             } else if (index == 3) {
-                Application.showForm(new FormSchedule());
+//                Application.showForm(new FormSchedule());                
+                Application.showForm(new TestComponents());
+
             } else if (index == 4) {
                 Application.showForm(new FormTicket());
             } else if (index == 5) {
