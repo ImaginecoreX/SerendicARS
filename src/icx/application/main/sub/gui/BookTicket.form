@@ -92,37 +92,43 @@
                               <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="scheduleID" min="-2" pref="91" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel6" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="jDateChooser1" min="-2" pref="170" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
+                              <Component id="jDateChooser1" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel7" min="-2" pref="72" max="-2" attributes="0"/>
-                                          <Component id="jDateChooser2" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="jButton2" alignment="1" min="-2" pref="88" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="seatBox" alignment="0" pref="170" max="32767" attributes="0"/>
                                       <Component id="jLabel9" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel7" min="-2" pref="72" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jButton2" alignment="1" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jDateChooser2" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -136,10 +142,10 @@
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jDateChooser1" max="32767" attributes="0"/>
-                              <Component id="jDateChooser2" max="32767" attributes="0"/>
-                              <Component id="priceField" alignment="1" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="priceField" min="-2" max="-2" attributes="0"/>
+                              <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -258,14 +264,14 @@
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jButton3KeyPressed"/>
                   </Events>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
-                </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
-                </Component>
                 <Component class="javax.swing.JLabel" name="scheduleID">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Schedule ID"/>
                   </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
                 </Component>
               </SubComponents>
             </Container>

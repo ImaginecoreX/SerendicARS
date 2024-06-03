@@ -32,7 +32,7 @@ public class Menu extends JPanel {
         {"Schedules"},
         {"Ticket"},
         {"~OTHER~"},
-        {"Flight"},
+        {"Flight Management", "Flights", "Airline", "Airport", "Aircraft Type", "Distance Calculation"},
         {"Class"},
         {"Seats"},
         {"Notification"},

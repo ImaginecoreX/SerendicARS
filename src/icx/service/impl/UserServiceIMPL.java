@@ -31,7 +31,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
     static {
         userServiceLogger = Logger.getLogger("icx.service.impl.UserServiceIMPL");
         try {
-            fileHandler = new FileHandler("icx.service.impl.UserServiceIMPL.txt", true);
+            fileHandler = new FileHandler("d:\\icx.service.impl.UserServiceIMPL.txt", true);
         } catch (Exception e) {
         }
         userServiceLogger.addHandler(fileHandler);
@@ -41,7 +41,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
     public UserLoginReturnDTO userLogin(String email, String password) {
 
         try {
-            ResultSet resultSet = MySQL.execute("SELECT * FROM `user` WHERE `email`='" + email + "' AND `password`='" + password + "'");
+            ResultSet resultSet = MySQL.execute("SELECT * FROM `user` INNER JOIN `user_type` ON `user`.`user_type_id`=`user_type`.`id` WHERE `email`='" + email + "' AND `password`='" + password + "'");
 
             if (resultSet.next()) {
 
@@ -51,7 +51,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
 
                     if (call) {
 
-                        return new UserLoginReturnDTO(new UserDTO(resultSet.getInt("u_id"), resultSet.getString("mobile"), resultSet.getString("fname"), resultSet.getString("lname"), resultSet.getString("password"), resultSet.getString("email"), resultSet.getInt("status"), resultSet.getString("user_type_id")), true, "sucess");
+                        return new UserLoginReturnDTO(new UserDTO(resultSet.getInt("u_id"), resultSet.getString("mobile"), resultSet.getString("fname"), resultSet.getString("lname"), resultSet.getString("password"), resultSet.getString("email"), resultSet.getInt("status"), resultSet.getString("type")), true, "sucess");
                     }
 
                 } else {
@@ -123,7 +123,6 @@ public class UserServiceIMPL implements UserService, UserLogsService {
                 tableModel.addRow(rowData);
 
             }
-            
 
         } catch (Exception e) {
             userServiceLogger.warning(e.toString());
@@ -131,14 +130,22 @@ public class UserServiceIMPL implements UserService, UserLogsService {
     }
 
     @Override
-    public void userAdd(String mobile, String fname, String lname, String password, String email, String userType) {
+    public boolean userAdd(String mobile, String fname, String lname, String password, String email, String userType) {
+
         try {
-            MySQL.execute("INSERT INTO `user`(`mobile`,`fname`,`lname`,`password`,`email`,`user_type_id`) VALUES('" + mobile + "','" + fname + "','" + lname + "','" + password + "','" + email + "','" + userType + "')");
+
+            ResultSet resultSet = MySQL.execute("SELECT * FROM `user` WHERE `email`='" + email + "' OR `mobile`='" + mobile + "'");
+            if (!resultSet.next()) {
+                MySQL.execute("INSERT INTO `user`(`mobile`,`fname`,`lname`,`password`,`email`,`user_type_id`) VALUES('" + mobile + "','" + fname + "','" + lname + "','" + password + "','" + email + "','" + userType + "')");
+                return true;
+            } else {
+                return false;
+            }
 
         } catch (Exception e) {
-             userServiceLogger.warning(e.toString());
+            userServiceLogger.warning(e.toString());
         }
-
+        return false;
     }
 
     @Override
@@ -155,7 +162,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("UPDATE `user` SET `status`='" + status + "' WHERE `u_id`='" + u_id + "'");
         } catch (Exception e) {
-             userServiceLogger.warning(e.toString());
+            userServiceLogger.warning(e.toString());
         }
     }
 
@@ -164,7 +171,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("INSERT INTO `user_type`(`type`) VALUES('" + type + "')");
         } catch (Exception e) {
-             userServiceLogger.warning(e.toString());
+            userServiceLogger.warning(e.toString());
         }
     }
 
@@ -173,7 +180,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("UPDATE `user_type` SET `type`='" + type + "' WHERE `id`='" + id + "'");
         } catch (Exception e) {
-         userServiceLogger.warning(e.toString());
+            userServiceLogger.warning(e.toString());
         }
     }
 
@@ -186,7 +193,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             MySQL.execute("INSERT INTO `user_log`(`login_date_time`,`logout_date_time`,`u_id`) VALUES('" + format.format(dateTime) + "','" + format.format(dateTime) + "','" + user_id + "')");
             return true;
         } catch (Exception e) {
-          userServiceLogger.warning(e.toString());
+            userServiceLogger.warning(e.toString());
         }
         return false;
     }
@@ -224,7 +231,7 @@ public class UserServiceIMPL implements UserService, UserLogsService {
         try {
             MySQL.execute("UPDATE `user_log` SET `logout_date_time`='" + format.format(dateTime) + "' WHERE `u_id`='" + user_id + "'");
         } catch (Exception e) {
-             userServiceLogger.warning(e.toString());
+            userServiceLogger.warning(e.toString());
         }
     }
 
@@ -244,8 +251,22 @@ public class UserServiceIMPL implements UserService, UserLogsService {
             }
 
         } catch (Exception e) {
-          userServiceLogger.warning(e.toString());
+            userServiceLogger.warning(e.toString());
         }
+    }
+
+    @Override
+    public String userCount(int status) {
+        try {
+            ResultSet resultSet = MySQL.execute("SELECT COUNT(`u_id`) AS `user_count` FROM `user` WHERE `status`='" + status + "'");
+            if (resultSet.next()) {
+                return resultSet.getString("user_count");
+            }
+
+        } catch (Exception e) {
+            userServiceLogger.warning(e.toString());
+        }
+        return null;
     }
 
 }

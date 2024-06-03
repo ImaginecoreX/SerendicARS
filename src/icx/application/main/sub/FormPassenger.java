@@ -374,7 +374,7 @@ public class FormPassenger extends javax.swing.JPanel {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -1224,13 +1224,13 @@ public class FormPassenger extends javax.swing.JPanel {
                 .addComponent(passengerScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                 .addGap(14, 14, 14))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void moreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreButtonActionPerformed
+    private void moreButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }//GEN-LAST:event_moreButtonActionPerformed
+    }                                          
 
-    private void destinationFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_destinationFieldKeyReleased
+    private void destinationFieldKeyReleased(java.awt.event.KeyEvent evt) {                                             
         // Select Destination
         String destination = destinationField.getText();
 
@@ -1241,9 +1241,9 @@ public class FormPassenger extends javax.swing.JPanel {
         }
         this.destination = "";
         loadPassengerTable();
-    }//GEN-LAST:event_destinationFieldKeyReleased
+    }                                            
 
-    private void flightFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_flightFieldKeyReleased
+    private void flightFieldKeyReleased(java.awt.event.KeyEvent evt) {                                        
         // Select Flight
         String flight = flightField.getText();
         if (flight.isEmpty()) {
@@ -1253,9 +1253,9 @@ public class FormPassenger extends javax.swing.JPanel {
         }
         this.flight = "";
         loadPassengerTable();
-    }//GEN-LAST:event_flightFieldKeyReleased
+    }                                       
 
-    private void classFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_classFieldKeyReleased
+    private void classFieldKeyReleased(java.awt.event.KeyEvent evt) {                                       
         // Select Class
         String className = classField.getText();
         if (className.isEmpty()) {
@@ -1265,40 +1265,40 @@ public class FormPassenger extends javax.swing.JPanel {
         }
         this.className = "";
         loadPassengerTable();
-    }//GEN-LAST:event_classFieldKeyReleased
+    }                                      
 
-    private void addPassengerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPassengerButtonActionPerformed
+    private void addPassengerButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         // Open AddPassenger
         passengerSeviceIMPL.openAddPassenger(this);
-    }//GEN-LAST:event_addPassengerButtonActionPerformed
+    }                                                  
 
-    private void updatePassengerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePassengerButtonActionPerformed
+    private void updatePassengerButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         // Open ManagePassenger
         passengerSeviceIMPL.openManagePassenger(this);
-    }//GEN-LAST:event_updatePassengerButtonActionPerformed
+    }                                                     
 
-    private void allDestinationsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allDestinationsButtonActionPerformed
+    private void allDestinationsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         // View All Destination
         this.destination = "";
         loadPassengerTable();
         loadDestinations("");
-    }//GEN-LAST:event_allDestinationsButtonActionPerformed
+    }                                                     
 
-    private void allFlightsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allFlightsButtonActionPerformed
+    private void allFlightsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // View All Flights
         this.flight = "";
         loadPassengerTable();
         loadFlights("");
-    }//GEN-LAST:event_allFlightsButtonActionPerformed
+    }                                                
 
-    private void allClassesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allClassesButtonActionPerformed
+    private void allClassesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // View All Classes
         this.className = "";
         loadPassengerTable();
         loadClasses("");
-    }//GEN-LAST:event_allClassesButtonActionPerformed
+    }                                                
 
-    private void destinationTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_destinationTableMouseClicked
+    private void destinationTableMouseClicked(java.awt.event.MouseEvent evt) {                                              
         // Select Destination
         if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
             int selectedRow = destinationTable.getSelectedRow();
@@ -1308,9 +1308,9 @@ public class FormPassenger extends javax.swing.JPanel {
                 loadPassengerTable();
             }
         }
-    }//GEN-LAST:event_destinationTableMouseClicked
+    }                                             
 
-    private void flightTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flightTableMouseClicked
+    private void flightTableMouseClicked(java.awt.event.MouseEvent evt) {                                         
         // Select Flight
         if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
             int selectedRow = flightTable.getSelectedRow();
@@ -1320,9 +1320,9 @@ public class FormPassenger extends javax.swing.JPanel {
                 loadPassengerTable();
             }
         }
-    }//GEN-LAST:event_flightTableMouseClicked
+    }                                        
 
-    private void classTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_classTableMouseClicked
+    private void classTableMouseClicked(java.awt.event.MouseEvent evt) {                                        
         // Select Class
         if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
             int selectedRow = classTable.getSelectedRow();
@@ -1332,9 +1332,9 @@ public class FormPassenger extends javax.swing.JPanel {
                 loadPassengerTable();
             }
         }
-    }//GEN-LAST:event_classTableMouseClicked
+    }                                       
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JPanel RecentFlightsContainer;
     private javax.swing.JButton addPassengerButton;
     private javax.swing.JButton allClassesButton;
@@ -1377,6 +1377,7 @@ public class FormPassenger extends javax.swing.JPanel {
     private javax.swing.JTable flightTable;
     private javax.swing.JPanel headContainer;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1406,5 +1407,5 @@ public class FormPassenger extends javax.swing.JPanel {
     private javax.swing.JPanel searchPanelContainer;
     private javax.swing.JLabel title;
     private javax.swing.JButton updatePassengerButton;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

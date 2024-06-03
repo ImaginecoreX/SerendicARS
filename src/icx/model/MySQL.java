@@ -27,7 +27,7 @@ public class MySQL {
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://" + URL + ":" + PORT + "/" + DATABASE, USERNAME, PASSWORD);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ars","sahan","Sahan@123");
             System.out.println("Database connection established successfully.");
         } catch (Exception e) {
             e.printStackTrace();

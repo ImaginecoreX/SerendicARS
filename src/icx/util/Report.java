@@ -1,11 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package icx.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.FileHandler;
 import javax.swing.JTable;
@@ -29,7 +26,7 @@ public class Report {
         printLogger = Logger.getLogger("icx.util.Print");
 
         try {
-            fileHandler = new FileHandler("icx.util.Print.txt", true);
+            fileHandler = new FileHandler("C:\\Users\\94701\\Documents\\loggers\\icx.util.Print.txt", true);
         } catch (Exception e) {
         }
 
@@ -65,4 +62,54 @@ public class Report {
         }
     }
 
+      
+      // Add methods for each report type
+    public void printTodayFlightsReport() {
+        print("path/to/TodayFlightsReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printTodayTakeoffedFlightsReport() {
+        print("path/to/TodayTakeoffedFlightsReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printTodayClosedFlightsReport() {
+        print("path/to/TodayClosedFlightsReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAirlinesReport() {
+        print("path/to/AirlinesReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAirlineCountriesReport() {
+        print("path/to/AirlineCountriesReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAirportsReport() {
+        print("path/to/AirportsReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAirportCountriesReport() {
+        print("path/to/AirportCountriesReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAirportCitiesReport() {
+        print("path/to/AirportCitiesReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAircraftManufactureReport(Date param1, Date param2) {
+         String reportFilePath = "src/icx/flight/reports/AircraftManufactureReport.jasper";
+        HashMap<String, Object> parameters = new HashMap<>();
+        parameters.put("param1", param1);
+        parameters.put("param2", param2);
+        
+        print(reportFilePath, parameters, "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAircraftModelsReport() {
+        print("path/to/AircraftModelsReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
+
+    public void printAircraftCapacityReport() {
+        print("path/to/AircraftCapacityReport.jasper", new HashMap<>(), "ars", "root", "Ms2005j@Neru");
+    }
 }
