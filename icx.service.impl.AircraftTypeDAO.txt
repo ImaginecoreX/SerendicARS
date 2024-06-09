@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-06-03T08:31:12.460643600Z</date>
+  <millis>1717403472460</millis>
+  <nanos>643600</nanos>
+  <sequence>1</sequence>
+  <logger>icx.service.impl.AircraftTypeDAO</logger>
+  <level>WARNING</level>
+  <class>icx.service.impl.AircraftTypeDAO</class>
+  <method>getStatus</method>
+  <thread>28</thread>
+  <message>Error loading Aircraft Status: Unknown column 'status' in 'group statement'</message>
+</record>
+</log>
